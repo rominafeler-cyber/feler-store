@@ -1,0 +1,205 @@
+.features-section {
+    padding: 96px 0;
+    background: #ffffff;
+}
+
+.features-container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.features-heading {
+    max-width: 760px;
+    margin: 0 auto 54px;
+    text-align: center;
+}
+
+.features-eyebrow {
+    margin-bottom: 12px;
+    color: var(--primary);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.features-heading h2 {
+    margin: 0;
+    font-family: "Fraunces", serif;
+    color: #111a33;
+    font-size: clamp(2.35rem, 4vw, 4rem);
+    font-weight: 600;
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+}
+
+.features-description {
+    max-width: 680px;
+    margin: 20px auto 0;
+    color: #68728a;
+    font-size: clamp(1rem, 1.45vw, 1.18rem);
+    line-height: 1.65;
+    font-weight: 500;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.feature-card {
+    position: relative;
+    min-height: 245px;
+    padding: 32px;
+    overflow: hidden;
+    border: 1px solid rgba(221, 225, 236, 0.95);
+    border-radius: 26px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(250, 251, 255, 0.96) 100%
+        );
+    box-shadow:
+        0 18px 50px rgba(48, 61, 104, 0.06),
+        0 4px 14px rgba(48, 61, 104, 0.03);
+    transition:
+        transform 200ms ease,
+        border-color 200ms ease,
+        box-shadow 200ms ease;
+}
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: -70px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(108, 112, 241, 0.11) 0%,
+        rgba(108, 112, 241, 0.04) 48%,
+        transparent 72%
+    );
+    pointer-events: none;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(105, 111, 239, 0.24);
+    box-shadow:
+        0 24px 58px rgba(48, 61, 104, 0.1),
+        0 7px 18px rgba(48, 61, 104, 0.05);
+}
+
+.feature-icon {
+    position: relative;
+    z-index: 1;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 28px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(105, 111, 239, 0.14);
+    border-radius: 17px;
+    background: linear-gradient(
+        145deg,
+        rgba(245, 247, 255, 1),
+        rgba(236, 240, 255, 0.92)
+    );
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 8px 18px rgba(73, 87, 170, 0.08);
+}
+
+.feature-icon svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.feature-card h3 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #18213b;
+    font-size: clamp(1.25rem, 2vw, 1.55rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.feature-card p {
+    position: relative;
+    z-index: 1;
+    margin: 12px 0 0;
+    max-width: 470px;
+    color: #69738a;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    font-weight: 500;
+}
+
+@media (max-width: 800px) {
+    .features-section {
+        padding: 76px 0;
+    }
+
+    .features-heading {
+        margin-bottom: 40px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        min-height: 220px;
+    }
+}
+
+@media (max-width: 560px) {
+    .features-section {
+        padding: 64px 0;
+    }
+
+    .features-container {
+        width: min(100% - 28px, 1120px);
+    }
+
+    .features-heading {
+        margin-bottom: 32px;
+    }
+
+    .features-heading h2 {
+        font-size: clamp(2.15rem, 11vw, 3rem);
+    }
+
+    .features-description {
+        font-size: 0.96rem;
+        line-height: 1.58;
+    }
+
+    .feature-card {
+        min-height: auto;
+        padding: 26px 22px;
+        border-radius: 22px;
+    }
+
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 22px;
+        border-radius: 15px;
+    }
+
+    .feature-card p {
+        font-size: 0.94rem;
+    }
+}
