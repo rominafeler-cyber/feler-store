@@ -1,0 +1,457 @@
+/* =========================================================
+   CÓMO TRABAJA FELER
+   ========================================================= */
+
+.how-feler-section {
+    position: relative;
+    padding: 88px 0 92px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(244, 246, 255, 0.95),
+            transparent 42%
+        ),
+        #ffffff;
+}
+
+.how-feler-container {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.how-feler-heading {
+    max-width: 820px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.how-feler-eyebrow {
+    margin: 0 0 12px;
+
+    color: #111a34;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.how-feler-heading h2 {
+    margin: 0;
+
+    font-family: "Fraunces", serif;
+    font-size: clamp(2.8rem, 5vw, 4.6rem);
+    font-weight: 600;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5f8cf5 0%,
+            #7777f2 48%,
+            #9567e9 100%
+        );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.how-feler-description {
+    max-width: 690px;
+    margin: 20px auto 0;
+
+    color: #65718a;
+
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   LOS 3 PASOS
+   ========================================================= */
+
+.how-feler-steps {
+    display: grid;
+    grid-template-columns: 1fr 54px 1fr 54px 1fr;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 42px;
+}
+
+.how-feler-step {
+    position: relative;
+    min-height: 310px;
+    padding: 36px 24px 28px;
+
+    text-align: center;
+
+    border: 1px solid rgba(220, 224, 238, 0.95);
+    border-radius: 26px;
+
+    background:
+        radial-gradient(
+            circle at 50% 32%,
+            rgba(238, 241, 255, 0.95),
+            transparent 42%
+        ),
+        linear-gradient(
+            145deg,
+            #ffffff,
+            rgba(251, 251, 255, 0.98)
+        );
+
+    box-shadow:
+        0 18px 45px rgba(48, 61, 104, 0.065),
+        0 6px 16px rgba(48, 61, 104, 0.03);
+}
+
+.how-feler-number {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    border: 1px solid rgba(110, 116, 239, 0.16);
+
+    background: #ffffff;
+    color: #6468ee;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    box-shadow:
+        0 6px 18px rgba(80, 88, 180, 0.07);
+}
+
+.how-feler-visual {
+    height: 150px;
+
+    display: grid;
+    place-items: center;
+}
+
+.how-feler-visual img {
+    width: 100%;
+    max-width: 220px;
+    max-height: 145px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 16px 24px rgba(77, 84, 154, 0.10)
+        );
+}
+
+.how-feler-step h3 {
+    margin: 6px 0 0;
+
+    font-family: "Fraunces", serif;
+
+    color: #17203a;
+
+    font-size: 1.55rem;
+    line-height: 1.18;
+}
+
+.how-feler-step p {
+    margin: 12px auto 0;
+    max-width: 290px;
+
+    color: #647089;
+
+    font-size: 0.93rem;
+    line-height: 1.55;
+}
+
+.how-feler-arrow {
+    color: #6961eb;
+
+    font-size: 2.4rem;
+    font-weight: 500;
+
+    text-align: center;
+
+    opacity: 0.92;
+}
+
+
+/* =========================================================
+   PRINCIPIOS
+   ========================================================= */
+
+.how-feler-principles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 0;
+
+    margin-top: 18px;
+
+    border: 1px solid rgba(222, 226, 239, 0.92);
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 18px 45px rgba(48, 61, 104, 0.05);
+
+    overflow: hidden;
+}
+
+.how-feler-principle {
+    min-height: 155px;
+    padding: 24px 20px;
+
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 14px;
+    align-items: start;
+
+    position: relative;
+}
+
+.how-feler-principle:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+    top: 24px;
+    right: 0;
+    bottom: 24px;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(124, 125, 238, 0.20),
+            transparent
+        );
+}
+
+.how-feler-principle-icon {
+    width: 50px;
+    height: 50px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(230, 239, 255, 1),
+            rgba(239, 232, 255, 1)
+        );
+
+    box-shadow:
+        0 8px 20px rgba(80, 88, 180, 0.08);
+}
+
+.how-feler-principle-icon svg {
+    width: 25px;
+    height: 25px;
+
+    fill: none;
+    stroke: #666bee;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.how-feler-principle h3 {
+    margin: 2px 0 7px;
+
+    color: #17203a;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.how-feler-principle p {
+    margin: 0;
+
+    color: #68748c;
+
+    font-size: 0.80rem;
+    line-height: 1.52;
+}
+
+
+/* =========================================================
+   FRASE FINAL
+   ========================================================= */
+
+.how-feler-promise {
+    margin-top: 20px;
+    min-height: 68px;
+    padding: 12px 26px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(238, 242, 255, 0.95),
+            rgba(247, 240, 255, 0.95)
+        );
+
+    color: #17203a;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.90);
+}
+
+.how-feler-promise-icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 6px 18px rgba(80, 88, 180, 0.10);
+}
+
+.how-feler-promise-icon svg {
+    width: 21px;
+    height: 21px;
+
+    fill: none;
+    stroke: #7777f2;
+    stroke-width: 1.9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.how-feler-promise p {
+    margin: 0;
+
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.how-feler-promise strong {
+    color: #6961eb;
+}
+
+
+/* =========================================================
+   TABLETAS
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+    .how-feler-steps {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .how-feler-arrow {
+        transform: rotate(90deg);
+        height: 34px;
+    }
+
+    .how-feler-principles {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .how-feler-principle:nth-child(2)::after {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   MÓVILES
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+    .how-feler-section {
+        padding: 64px 0 70px;
+    }
+
+    .how-feler-container {
+        width: min(100% - 28px, 1120px);
+    }
+
+    .how-feler-heading {
+        margin-bottom: 34px;
+    }
+
+    .how-feler-heading h2 {
+        font-size: clamp(2.35rem, 11vw, 3.4rem);
+        line-height: 1.04;
+    }
+
+    .how-feler-description {
+        font-size: 0.95rem;
+    }
+
+    .how-feler-step {
+        min-height: auto;
+        padding: 58px 20px 26px;
+    }
+
+    .how-feler-visual {
+        height: 145px;
+    }
+
+    .how-feler-visual img {
+        max-width: 210px;
+        max-height: 140px;
+    }
+
+    .how-feler-principles {
+        grid-template-columns: 1fr;
+    }
+
+    .how-feler-principle {
+        min-height: auto;
+    }
+
+    .how-feler-principle::after {
+        display: none !important;
+    }
+
+    .how-feler-promise {
+        padding: 16px 18px;
+        align-items: flex-start;
+    }
+
+    .how-feler-promise p {
+        font-size: 0.92rem;
+        line-height: 1.5;
+    }
+}

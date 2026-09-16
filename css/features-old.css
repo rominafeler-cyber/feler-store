@@ -3,293 +3,263 @@
     isolation: isolate;
     overflow: hidden;
     padding: 80px 0 88px;
+
     background:
         radial-gradient(
             circle at 50% 0%,
-            rgba(247,248,255,.9),
+            rgba(247, 248, 255, 0.9),
             transparent 38%
         ),
-        #fff;
+        #ffffff;
 }
 
-.features-container{
-    position:relative;
-    z-index:2;
-    width:min(1080px,calc(100% - 48px));
-    margin:0 auto;
+.features-container {
+    position: relative;
+    z-index: 2;
+
+    width: min(1080px, calc(100% - 48px));
+    margin: 0 auto;
 }
 
-.features-heading{
-    max-width:820px;
-    margin:0 auto 42px;
-    text-align:center;
+.features-heading {
+    max-width: 820px;
+    margin: 0 auto 42px;
+
+    text-align: center;
 }
 
-.features-eyebrow{
+.features-eyebrow {
+    margin: 0 0 12px;
 
-    margin:0 0 12px;
+    color: #111a34;
 
-    color:#5968ed;
+    font-size: 0.82rem;
+    font-weight: 700;
 
-    font-size:.82rem;
-
-    font-weight:700;
-
-    letter-spacing:.10em;
-
-    text-transform:uppercase;
-
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
 }
 
-.features-heading h2{
+.features-heading h2 {
+    max-width: 830px;
+    margin: 0 auto;
+    padding: 0.04em 0 0.08em;
 
-    margin:0;
+    font-family: "Fraunces", serif;
 
-    font-family:"Fraunces",serif;
+    font-size: clamp(2.7rem, 5vw, 4.6rem);
+    font-weight: 600;
 
-    color:#111a34;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
 
-    font-size:clamp(2.7rem,5vw,4.6rem);
+    background: linear-gradient(
+        90deg,
+        #5f8cf5 0%,
+        #7777f2 48%,
+        #9567e9 100%
+    );
 
-    line-height:1.02;
+    background-clip: text;
+    -webkit-background-clip: text;
 
-    letter-spacing:-.045em;
-
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
-.features-description{
+.features-description {
+    max-width: 700px;
+    margin: 22px auto 0;
 
-    max-width:700px;
+    color: #65718a;
 
-    margin:22px auto 0;
-
-    color:#65718a;
-
-    font-size:1.08rem;
-
-    line-height:1.65;
-
+    font-size: 1.08rem;
+    line-height: 1.65;
 }
 
-.features-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:16px;
-
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 }
 
-/* ---------- TARJETA ---------- */
+/* ---------- TARJETAS ---------- */
 
-.feature-card{
+.feature-card {
+    position: relative;
 
-    position:relative;
+    min-height: 215px;
+    padding: 20px 22px;
 
-    display:grid;
+    display: grid;
+    grid-template-columns: 215px 1fr;
+    align-items: center;
+    gap: 18px;
 
-    grid-template-columns:215px 1fr;
+    overflow: hidden;
 
-    align-items:center;
-
-    gap:18px;
-
-    min-height:215px;
-
-    padding:20px 22px;
-
-    overflow:hidden;
-
-    border:1px solid rgba(221,225,238,.9);
-
-    border-radius:24px;
+    border: 1px solid rgba(221, 225, 238, 0.9);
+    border-radius: 24px;
 
     background:
         radial-gradient(
             circle at 24% 45%,
-            rgba(235,239,255,.8),
+            rgba(235, 239, 255, 0.8),
             transparent 42%
         ),
         linear-gradient(
             145deg,
-            #fff,
-            rgba(251,251,255,.97)
+            #ffffff,
+            rgba(251, 251, 255, 0.97)
         );
 
     box-shadow:
-        0 16px 38px rgba(48,61,104,.055),
-        0 4px 12px rgba(48,61,104,.02);
+        0 16px 38px rgba(48, 61, 104, 0.055),
+        0 4px 12px rgba(48, 61, 104, 0.02);
 
     transition:
-        transform .22s ease,
-        box-shadow .22s ease,
-        border-color .22s ease;
-
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        border-color 220ms ease;
 }
 
-.feature-card:hover{
+.feature-card:hover {
+    transform: translateY(-4px);
 
-    transform:translateY(-4px);
-
-    border-color:rgba(103,110,239,.22);
+    border-color: rgba(103, 110, 239, 0.22);
 
     box-shadow:
-        0 24px 56px rgba(48,61,104,.09),
-        0 8px 18px rgba(48,61,104,.04);
-
+        0 24px 56px rgba(48, 61, 104, 0.09),
+        0 8px 18px rgba(48, 61, 104, 0.04);
 }
 
-/* ---------- ILUSTRACIÓN ---------- */
+/* ---------- ILUSTRACIONES ---------- */
 
-.feature-visual{
+.feature-visual {
+    position: relative;
 
-    position:relative;
+    height: 170px;
 
-    display:grid;
-
-    place-items:center;
-
-    height:170px;
-
+    display: grid;
+    place-items: center;
 }
 
-.feature-visual::before{
+.feature-visual::before {
+    content: "";
 
-    content:"";
+    position: absolute;
 
-    position:absolute;
+    width: 190px;
+    height: 190px;
 
-    width:190px;
-
-    height:190px;
-
-    border-radius:50%;
+    border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(225,232,255,.82),
-            rgba(239,242,255,.45) 58%,
+            rgba(225, 232, 255, 0.82),
+            rgba(239, 242, 255, 0.45) 58%,
             transparent 72%
         );
-
 }
 
-.feature-visual img{
+.feature-visual img {
+    position: relative;
+    z-index: 2;
 
-    position:relative;
+    display: block;
 
-    z-index:2;
+    width: 100%;
+    max-width: 240px;
+    max-height: 170px;
 
-    display:block;
-
-    width:100%;
-
-    max-width:240px;
-
-    max-height:170px;
-
-    object-fit:contain;
+    object-fit: contain;
 
     filter:
         drop-shadow(
-            0 16px 22px rgba(76,84,154,.08)
+            0 16px 22px rgba(76, 84, 154, 0.08)
         );
 
-    transition:transform .22s ease;
-
+    transition: transform 220ms ease;
 }
 
-.feature-card:hover .feature-visual img{
-
-    transform:translateY(-2px);
-
+.feature-card:hover .feature-visual img {
+    transform: translateY(-2px);
 }
 
 /* ---------- TEXTO ---------- */
 
-.feature-content{
+.feature-content {
+    position: relative;
+    z-index: 2;
 
-    position:relative;
-
-    z-index:2;
-
-    padding-left:12px;
-
+    padding-left: 12px;
 }
 
-.feature-card h3{
+.feature-card h3 {
+    margin: 0;
 
-    margin:0;
+    font-family: "Fraunces", serif;
 
-    font-family:"Fraunces",serif;
+    color: #17203a;
 
-    color:#17203a;
+    font-size: clamp(1.55rem, 2vw, 1.9rem);
+    font-weight: 600;
 
-    font-size:clamp(1.55rem,2vw,1.9rem);
-
-    line-height:1.15;
-
+    line-height: 1.15;
 }
 
-.feature-card p{
+.feature-card p {
+    margin: 12px 0 0;
 
-    margin:12px 0 0;
+    color: #5f6c87;
 
-    color:#5f6c87;
-
-    font-size:.94rem;
-
-    line-height:1.55;
-
+    font-size: 0.94rem;
+    line-height: 1.55;
 }
 
-/* ---------- NÚMERO ---------- */
+/* ---------- NÚMEROS ---------- */
 
-.feature-number{
+.feature-number {
+    position: absolute;
+    z-index: 5;
 
-    position:absolute;
+    top: 16px;
+    left: 16px;
 
-    top:16px;
+    width: 42px;
+    height: 42px;
 
-    left:16px;
+    display: grid;
+    place-items: center;
 
-    width:42px;
+    border: 1px solid rgba(110, 116, 239, 0.16);
+    border-radius: 50%;
 
-    height:42px;
+    background: #ffffff;
 
-    display:grid;
+    color: #5d61ea;
 
-    place-items:center;
-
-    border-radius:50%;
-
-    border:1px solid rgba(110,116,239,.16);
-
-    background:#fff;
-
-    color:#5d61ea;
-
-    font-size:1rem;
-
-    font-weight:700;
-
-    z-index:5;
+    font-size: 1rem;
+    font-weight: 700;
 
     box-shadow:
-        0 6px 18px rgba(80,88,180,.06);
-
+        0 6px 18px rgba(80, 88, 180, 0.06);
 }
+
 /* ---------- CONSTELACIONES ---------- */
 
 .features-constellation {
     position: absolute;
     z-index: 1;
+
     top: 80px;
+
     width: 270px;
     height: 230px;
+
     opacity: 0.72;
+
     pointer-events: none;
 }
 
@@ -299,20 +269,25 @@
 
 .features-constellation-right {
     right: 18px;
+
     transform: scaleX(-1);
 }
 
 .constellation-point {
     position: absolute;
+
     width: 9px;
     height: 9px;
+
     border-radius: 50%;
+
     background: radial-gradient(
         circle at 35% 30%,
         #c7cdff 0%,
         #777df1 48%,
         #5c61e9 100%
     );
+
     box-shadow:
         0 0 0 5px rgba(110, 116, 239, 0.06),
         0 5px 12px rgba(81, 90, 190, 0.18);
@@ -326,6 +301,7 @@
 .constellation-point-2 {
     top: 104px;
     left: 120px;
+
     width: 13px;
     height: 13px;
 }
@@ -343,51 +319,63 @@
 .constellation-point-5 {
     top: 92px;
     left: 236px;
+
     width: 6px;
     height: 6px;
 }
 
 .constellation-line {
     position: absolute;
+
     height: 1px;
+
     background: linear-gradient(
         90deg,
         rgba(105, 111, 239, 0.06),
         rgba(105, 111, 239, 0.43),
         rgba(105, 111, 239, 0.06)
     );
+
     transform-origin: left center;
 }
 
 .constellation-line-1 {
     top: 25px;
     left: 84px;
+
     width: 95px;
+
     transform: rotate(65deg);
 }
 
 .constellation-line-2 {
     top: 108px;
     left: 124px;
+
     width: 112px;
+
     transform: rotate(-7deg);
 }
 
 .constellation-line-3 {
     top: 108px;
     left: 124px;
+
     width: 105px;
+
     transform: rotate(142deg);
 }
 
 .constellation-line-4 {
     top: 108px;
     left: 124px;
+
     width: 118px;
+
     transform: rotate(27deg);
 }
 
-/* ---------- TABLETAS ---------- */
+/* ---------- TABLETAS GRANDES ---------- */
 
 @media (max-width: 1100px) {
     .features-container {
@@ -396,6 +384,7 @@
 
     .features-constellation {
         opacity: 0.34;
+
         transform: scale(0.8);
     }
 
@@ -405,12 +394,15 @@
 
     .features-constellation-right {
         right: -65px;
+
         transform: scaleX(-1) scale(0.8);
     }
 
     .feature-card {
         grid-template-columns: 185px minmax(0, 1fr);
+
         padding: 20px;
+
         gap: 14px;
     }
 
@@ -428,6 +420,8 @@
     }
 }
 
+/* ---------- TABLETAS ---------- */
+
 @media (max-width: 850px) {
     .features-section {
         padding: 70px 0 78px;
@@ -443,6 +437,7 @@
 
     .feature-card {
         min-height: 215px;
+
         grid-template-columns: 210px minmax(0, 1fr);
     }
 
@@ -473,15 +468,19 @@
 
     .features-description {
         margin-top: 18px;
+
         font-size: 0.96rem;
         line-height: 1.58;
     }
 
     .feature-card {
         min-height: auto;
+
         padding: 58px 20px 24px;
+
         grid-template-columns: 1fr;
         gap: 6px;
+
         border-radius: 22px;
     }
 
@@ -495,15 +494,17 @@
     }
 
     .feature-content {
-        padding-left: 0;
         padding-top: 8px;
+        padding-left: 0;
     }
 
     .feature-number {
         top: 16px;
         left: 16px;
+
         width: 40px;
         height: 40px;
+
         font-size: 0.96rem;
     }
 
@@ -514,6 +515,7 @@
     .feature-card p {
         max-width: none;
         margin-top: 10px;
+
         font-size: 0.94rem;
     }
 }
