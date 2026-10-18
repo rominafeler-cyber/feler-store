@@ -186,7 +186,7 @@
 .login-button {
     margin-left: 4px;
     padding: 13px 23px;
-    border: 1px solid rgba(123, 97, 255, 0.12);
+    border: 1px solid var(--feler-outline);
     border-radius: 999px;
     background:
         linear-gradient(
@@ -222,7 +222,7 @@
     width: 44px;
     height: 44px;
     padding: 11px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--feler-outline);
     border-radius: 14px;
     background: var(--surface);
     cursor: pointer;

@@ -97,7 +97,7 @@
 
     text-align: center;
 
-    border: 1px solid rgba(220, 224, 238, 0.95);
+    border: 1px solid var(--feler-outline);
     border-radius: 26px;
 
     background:
@@ -129,7 +129,7 @@
     place-items: center;
 
     border-radius: 50%;
-    border: 1px solid rgba(110, 116, 239, 0.16);
+    border: 1px solid var(--feler-outline);
 
     background: #ffffff;
     color: #6468ee;
@@ -206,7 +206,7 @@
 
     margin-top: 18px;
 
-    border: 1px solid rgba(222, 226, 239, 0.92);
+    border: 1px solid var(--feler-outline);
     border-radius: 24px;
 
     background: rgba(255, 255, 255, 0.92);

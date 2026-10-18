@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Feler V22 | Encontremos la opción adecuada para ti</title>
+<meta content="Feler te ayuda a encontrar el producto que mejor se adapta a tus necesidades." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Fraunces:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/variables.css" rel="stylesheet"/>
+<link href="css/components.css" rel="stylesheet"/>
+<link href="css/header.css" rel="stylesheet"/>
+<link href="css/buscar.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+        /* V5 visual refinement: approved mockup typography and spacing. */
+        @media (min-width: 900px) {
+            .search-flow { padding-top: 26px; }
+            .progress-card { margin-bottom: 24px; }
+            .progress-label { font-size: 1.08rem; line-height: 1.22; font-weight: 600; }
+            .progress-number { font-size: 1.12rem; }
+            .search-eyebrow { font-size: 1.05rem; letter-spacing: .16em; font-weight: 700; }
+            .search-intro { margin-bottom: 24px; }
+            .search-intro h1 { font-size: clamp(2.65rem, 4vw, 4rem); line-height: 1.02; max-width: 920px; margin-left: auto; margin-right: auto; }
+            .search-intro p { font-size: 1.15rem; line-height: 1.5; max-width: 720px; margin-left: auto; margin-right: auto; }
+            .query-summary { max-width: 930px; margin-left: auto; margin-right: auto; padding: 18px 24px; }
+            .query-summary p { font-size: 1.12rem; }
+            .question-card { max-width: 1080px; margin-left: auto; margin-right: auto; padding: 38px 42px; }
+            .question-count { font-size: .95rem; }
+            .question-card h2 { font-size: clamp(2rem, 2.7vw, 2.75rem); line-height: 1.08; }
+            .question-help { font-size: 1.08rem; line-height: 1.5; max-width: 900px; }
+            .answer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+            .answer-card { min-height: 142px; padding: 22px; }
+            .answer-icon { font-size: 1.55rem; }
+            .answer-content strong { font-size: 1.12rem; }
+            .answer-content small { font-size: .98rem; line-height: 1.35; }
+            .question-navigation { margin-top: 24px; }
+            .back-button, .next-button { min-height: 52px; padding: 0 26px; font-size: 1rem; }
+            .trust-panel { max-width: 1180px; margin: 22px auto 0; }
+            .trust-item strong { font-size: 1.08rem; line-height: 1.2; }
+            .trust-item > div > span { font-size: 1.10rem; line-height: 1.35; font-weight: 500; }
+            .trust-icon { font-size: 1.3rem; }
+        }
+
+        @media (min-width: 1200px) {
+            .search-flow > .container { max-width: 1240px; }
+            .progress-card { max-width: 1080px; margin-left: auto; margin-right: auto; }
+            .search-intro { padding-top: 4px; }
+        }
+
+        @media (max-width: 899px) {
+            .search-intro h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
+            .question-card h2 { font-size: clamp(1.65rem, 6vw, 2.2rem); }
+            .question-help, .search-intro p { font-size: 1rem; }
+        }
+
+        /* V6 — composición visual final sobre la lógica adaptativa de V5 */
+        .question-layout {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 250px minmax(0, 1fr);
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .context-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .context-visual {
+            min-height: 292px;
+            border-radius: 34px;
+            overflow: hidden;
+            background: #f4f2ff;
+        }
+
+        .context-photo {
+            width: 100%;
+            height: 100%;
+            min-height: 292px;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .context-note {
+            padding: 24px 22px;
+            border-radius: 28px;
+            background: linear-gradient(145deg,#f5f2ff,#f0f5ff);
+            color: #68728d;
+            font-size: 1.04rem;
+            line-height: 1.55;
+        }
+        .context-note-icon {
+            display:block;
+            color:#6557f5;
+            font-size:1.65rem;
+            margin-bottom:9px;
+        }
+        .context-note strong {
+            display:block;
+            color:#111b3a;
+            font-size:1.17rem;
+            margin-bottom:4px;
+        }
+
+        .question-layout .question-card {
+            width:100%;
+            max-width:none;
+            margin:0;
+        }
+
+        @media (min-width: 900px) {
+            .query-summary, .trust-panel { max-width:1240px; }
+        }
+
+        @media (max-width: 899px) {
+            .question-layout { display:block; }
+            .context-panel { display:none; }
+        }
+
+
+        /* V8 — mayor escala visual + resumen dinámico */
+        @media (min-width: 1100px) {
+            .search-flow > .container { max-width: 1420px; }
+            .progress-card { max-width: 1240px; }
+            .search-intro h1 { font-size: clamp(3rem, 4.4vw, 4.5rem); max-width: 1040px; }
+            .search-intro p { font-size: 1.22rem; max-width: 800px; }
+            .query-summary, .question-layout, .trust-panel { max-width: 1320px; }
+            .question-layout { grid-template-columns: 300px minmax(0, 1fr); gap: 30px; }
+            .context-visual { min-height: 330px; }
+            .question-layout .question-card { padding: 42px 46px; min-height: 430px; }
+            .question-card h2 { font-size: clamp(2.25rem, 3vw, 3rem); }
+            .question-help { font-size: 1.13rem; }
+            .answer-card { min-height: 150px; }
+            .answer-content strong { font-size: 1.16rem; }
+            .answer-content small { font-size: 1rem; }
+        }
+
+        .context-note {
+            min-height: 170px;
+        }
+
+        .answers-summary {
+            margin: 12px 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 8px;
+        }
+
+        .answers-summary li {
+            padding: 8px 0;
+            border-top: 1px solid rgba(103, 88, 245, .10);
+            color: #52607d;
+            font-size: .93rem;
+            line-height: 1.35;
+        }
+
+        .answers-summary li:first-child {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .answers-summary b {
+            display: block;
+            color: #111b3a;
+            font-size: .95rem;
+            margin-bottom: 1px;
+        }
+
+        .answers-summary-empty {
+            color: #68728d;
+        }
+
+
+        /* V9 — resultados del catálogo de prueba */
+        .feler-results {display:grid;gap:16px;margin-top:12px}
+        .feler-result {border:1px solid #e2e5f2;border-radius:20px;padding:20px;background:#fff}
+        .feler-result h3 {font-family:inherit;font-size:1.24rem;color:#15203e;margin:7px 0}
+        .feler-result p {color:#586783;line-height:1.5;margin:8px 0}
+        .feler-result .match-label {color:#6255ed;font-weight:700;font-size:.86rem}
+        .feler-result .result-meta {font-size:.9rem;color:#56627a}
+        .feler-notice {border-radius:16px;background:#f3f2ff;padding:16px;color:#3c4765;line-height:1.5}
+        .feler-results a {color:#5545df;text-decoration:underline}
+        @media(max-width:650px){.feler-result{padding:16px}}
+
+/* V17: availability snapshot is explicitly dated, never claimed live */
+.feler-availability-banner{border:1px solid #b7d6c2;border-radius:15px;background:#f3faf5;padding:15px 17px;color:#244c34;font-weight:650;line-height:1.5}
+.feler-availability{display:inline-block!important;padding:7px 11px;border-radius:10px;background:#f0f2f7;color:#3e4b66!important;font-size:.88rem;font-weight:700}
+.feler-availability[data-estado="disponible"]{background:#e9f7ed;color:#25633b!important}
+.feler-availability[data-estado="no_disponible"]{background:#fff3e3;color:#825019!important}
+/* V15: results comparison */
+.feler-results{gap:18px!important}.feler-result{padding:22px!important}
+.feler-result-head{display:flex;align-items:center;gap:16px;margin-bottom:12px}
+.feler-product-symbol{font-weight:800;font-family:inherit;flex:none;width:68px;height:76px;border-radius:16px;background:linear-gradient(150deg,#f1efff,#eaf5ff);display:flex;align-items:center;justify-content:center;font-size:32px;color:#5149c5}
+.feler-result h3{font-size:1.3rem!important}.feler-result .result-meta{font-size:.87rem}
+.feler-chip-row{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.feler-chip{padding:6px 9px;border-radius:99px;background:#f1f3ff;color:#374266;font-size:.83rem;font-weight:600}
+.feler-link{display:inline-block;padding:11px 15px;border-radius:12px;background:#5648e7;color:white!important;text-decoration:none!important;font-weight:700;margin:10px 0}
+.feler-compare-wrap{overflow-x:auto;border:1px solid #e0e4f2;border-radius:18px;background:white}
+.feler-compare{border-collapse:collapse;width:100%;min-width:560px;font-size:.89rem}.feler-compare th,.feler-compare td{padding:13px 12px;border-bottom:1px solid #e9ebf5;text-align:left;vertical-align:top}.feler-compare th{background:#f4f3ff;color:#1d2949}.feler-compare td:first-child{font-weight:700}.feler-compare tr:last-child td{border-bottom:0}
+.feler-section-title{font-family:Fraunces,serif;font-size:1.55rem;color:#16203d;margin:10px 0 0}.feler-disclaimer{font-size:.9rem;color:#4e5b78;line-height:1.55}
+@media(max-width:650px){.feler-result-head{align-items:flex-start}.feler-product-symbol{width:52px;height:60px}}
+
+        /* V19 — estado visible de las cuatro etapas */
+        .progress-card .progress-step.completed .progress-number { background: #e8e5ff; color: #5146c8; border-color: #a89ef0; }
+        .progress-card .progress-step.completed .progress-label { color: #5146c8; }
+        .progress-card .progress-line::before { content:""; display:block; width:var(--feler-progress,0%); height:100%; background:#6c5ce7; transition:width .2s ease; }
+      .feler-categories{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:20px auto 28px}
+  .feler-categories a{border:1px solid #dcdcf5;border-radius:24px;padding:12px 17px;color:#302a75;background:white;text-decoration:none;font-weight:650;font-size:14px}
+  .feler-categories a.selected{background:#5847ed;color:white;border-color:#5847ed}
+  .feler-note{background:#f5f3ff;border:1px solid #ddd8ff;border-radius:14px;padding:18px;line-height:1.6;color:#27314d}
+  .feler-note h3{margin:0 0 10px}
+  .feler-note p{margin:8px 0}
+  @media(max-width:600px){.feler-categories{gap:6px}.feler-categories a{font-size:12px;padding:9px}}
+.feler-categories a{display:inline-flex;align-items:center;justify-content:center;gap:9px}.feler-tab-icon{width:21px;height:21px;flex-shrink:0;display:block}
+</style>
+<link href="css/v28.css" rel="stylesheet"/><style>
+/* compact question cards: category hue only in selected state */
+.question-layout .question-card{padding:24px 28px!important;min-height:0!important;background:#f7f7ff!important}.question-card h2{font-size:clamp(1.65rem,2.35vw,2.25rem)!important;line-height:1.13!important}.answer-card,body:has(a[data-cat="ninos"].selected) .answer-card,body:has(a[data-cat="belleza"].selected) .answer-card,body:has(a[data-cat="aspiradoras"].selected) .answer-card{background:#fff!important;border:1px solid #e0e3f1!important;min-height:88px!important;padding:12px 14px!important;box-shadow:0 4px 12px rgba(30,35,70,.06)!important;border-radius:15px!important}.answer-card:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(30,35,70,.11)!important}.answer-card.selected{border-color:#8570ef!important;background:linear-gradient(135deg,#fff,#f4f0ff)!important;box-shadow:0 0 0 2px #a89bfa55!important}.answer-card .answer-icon{font-size:1.3rem!important;width:37px!important;height:37px!important;flex:0 0 37px!important;background:#f5f4ff!important}.question-layout{gap:16px!important}.question-layout .answers-panel,.question-layout .summary-card{border-radius:18px!important}.answers-summary-empty:before{content:'✦';display:block;color:#7565e8;font-size:25px;margin-bottom:10px}.answers-summary-empty{font-size:.92rem!important}.question-card .answer-grid{gap:12px!important}.question-card .answer-content strong{font-size:.98rem!important}body:has(.question-layout){background-image:radial-gradient(ellipse 360px 450px at -85px 400px,#e6e0ff80,transparent 80%),radial-gradient(ellipse 350px 410px at calc(100% + 80px) 380px,#e3f4ee80,transparent 80%)!important;background-attachment:fixed!important}@media(max-width:650px){.question-layout .question-card{padding:18px!important}.answer-card{min-height:72px!important}}
+<style>
+/* QA: respuestas blancas y selección violeta inequívoca */
+.question-layout .answer-card:not(.selected),body:has(.question-layout) .answer-card:not(.selected){background:#fff!important;border-color:#deddf5!important}
+.question-layout .answer-card.selected,body:has(.question-layout) .answer-card.selected{background:#ddd4ff!important;border:2px solid #8061e9!important;box-shadow:0 0 0 2px #a999ed44,0 8px 20px #5245a61a!important;color:#242047!important}
+.question-layout .answer-card.selected .answer-icon{background:#cbbdff!important;color:#5340b8!important}
+.question-layout .answer-card.selected strong,.question-layout .answer-card.selected small{color:#252047!important}
+</style></head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="Feler, página principal" class="brand" href="index.html">
+<span aria-hidden="true" class="brand-mark">
+<span class="brand-shape brand-shape-one"></span>
+<span class="brand-shape brand-shape-two"></span>
+<span class="brand-shape brand-shape-three"></span>
+</span>
+<span class="brand-name">FELER</span>
+</a>
+<nav aria-label="Navegación principal" class="main-navigation"><a href="como-funciona.html">Cómo funciona</a><a href="categorias.html">Categorías</a><a href="sobre-feler.html">Sobre Feler</a><a class="featured-nav" href="recomendados.html">Productos recomendados</a></nav>
+<div class="header-actions"><a class="feler-heart" href="favoritos.html" aria-label="Mis favoritos" title="Mis favoritos">♡</a>
+
+
+
+<a class="feler-user-icon" href="registro.html" aria-label="Acceder a mi cuenta" title="Acceder a mi cuenta"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"/><path d="M4.5 21v-2a7.5 7.5 0 0 1 15 0v2"/></svg></a><a class="login-button" href="registro.html">Sign in</a></div>
+<button aria-expanded="false" aria-label="Abrir menú" class="mobile-menu-button" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header>
+<main class="search-flow">
+<div class="container">
+<section aria-label="Progreso de la búsqueda" class="progress-card">
+<div class="progress-line"></div>
+<div class="progress-step active">
+<div class="progress-number">1</div>
+<div class="progress-label">
+                    Conociendo tus necesidades
+                </div>
+</div>
+<div class="progress-step">
+<div class="progress-number">2</div>
+<div class="progress-label">
+                    Afinando opciones
+                </div>
+</div>
+<div class="progress-step">
+<div class="progress-number">3</div>
+<div class="progress-label">
+                    Analizando productos
+                </div>
+</div>
+<div class="progress-step">
+<div class="progress-number">4</div>
+<div class="progress-label">
+                    Tu mejor elección
+                </div>
+</div>
+</section>
+<section class="search-intro">
+<span class="search-eyebrow">
+                EMPECEMOS POR TI
+            </span>
+<h1>
+                Encontremos la opción adecuada para ti
+            </h1>
+<p>
+                Cuéntanos un poco más. Solo te preguntaremos lo que
+                realmente pueda cambiar nuestra recomendación.
+            </p>
+</section>
+<nav aria-label="Elegir categoría" class="feler-categories">
+<a data-cat="ninos" href="buscar-v28.html?categoria=ninos"><svg class="feler-tab-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M6 20v-3a6 6 0 0 1 12 0v3M4.5 21h15M8 12l-2 3m10-3 2 3"/></svg><span>Niños · Ropa interior infantil</span></a>
+<a data-cat="belleza" href="buscar-v28.html?categoria=belleza"><svg class="feler-tab-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10a3 3 0 0 0 3-3v-3a2 2 0 0 0-4 0v-4a2 2 0 0 0-4 0V8a2 2 0 0 0-4 0v7l-1-2a2 2 0 0 0-3 2l3 6Z"/><path d="M8 5V3m4 3V2m4 7V5"/></svg><span>Belleza · Uñas</span></a>
+<a data-cat="aspiradoras" href="buscar-v28.html?categoria=aspiradoras"><svg class="feler-tab-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5V21H3v-9.5ZM9 21v-7h6v7"/></svg><span>Hogar · Aspiradoras</span></a>
+</nav>
+<section class="query-summary">
+<div>
+<span class="query-label">
+                    Tu búsqueda
+                </span>
+<p id="user-query">
+                    “Busco una aspiradora”
+                </p>
+</div>
+<button class="edit-query" type="button">
+                Editar respuestas
+            </button>
+</section>
+<div class="question-layout">
+<aside aria-label="Cómo usamos tus respuestas" class="context-panel">
+<div class="context-visual">
+<img alt="Sala luminosa con un perro, representando un hogar donde se necesita limpiar" class="context-photo" src="assets/images/feler-living-room-dog.png"/>
+</div>
+<div class="context-note">
+<span aria-hidden="true" class="context-note-icon">✦</span>
+<strong>Tus respuestas</strong>
+<div class="answers-summary-empty" id="answers-summary">
+                        Se irán mostrando aquí a medida que respondas.
+                    </div>
+</div>
+</aside>
+<section class="question-card">
+<div class="question-count" id="question-count">
+                Pregunta 1 de 4
+            </div>
+<h2 id="question-title">
+                ¿Dónde la vas a usar principalmente?
+            </h2>
+<p class="question-help" id="question-help">
+                Esto nos ayuda a encontrar aspiradoras que se adapten
+                mejor a tu espacio.
+            </p>
+<div class="answer-grid" id="answer-grid">
+<button class="answer-card" type="button">
+<span class="answer-icon">⌂</span>
+<span class="answer-content">
+<strong>Apartamento pequeño</strong>
+<small>Hasta 100 m²</small>
+</span>
+</button>
+<button class="answer-card" type="button">
+<span class="answer-icon">⌂</span>
+<span class="answer-content">
+<strong>Apartamento grande</strong>
+<small>Más de 100 m²</small>
+</span>
+</button>
+<button class="answer-card" type="button">
+<span class="answer-icon">⌂</span>
+<span class="answer-content">
+<strong>Casa</strong>
+<small>Una o más plantas</small>
+</span>
+</button>
+<button class="answer-card" type="button">
+<span class="answer-icon">＋</span>
+<span class="answer-content">
+<strong>Otro</strong>
+<small>Cuéntanos más sobre tu espacio</small>
+</span>
+</button>
+</div>
+<div class="question-navigation">
+<button class="back-button" type="button">
+                    ← Atrás
+                </button>
+<button class="next-button" disabled="" type="button">
+                    Siguiente →
+                </button>
+</div>
+</section>
+</div>
+<section class="trust-panel">
+<div class="trust-item">
+<span class="trust-icon">✓</span>
+<div>
+<strong>Investigación</strong>
+<span>Información verificada</span>
+</div>
+</div>
+<div class="trust-item">
+<span class="trust-icon">✦</span>
+<div>
+<strong>Independencia</strong>
+<span>Criterios de selección explicados</span>
+</div>
+</div>
+<div class="trust-item">
+<span class="trust-icon">◎</span>
+<div>
+<strong>Transparencia</strong>
+<span>Te explicamos por qué</span>
+</div>
+</div>
+<div class="trust-item">
+<span class="trust-icon">↻</span>
+<div>
+<strong>Actualización</strong>
+<span>Datos revisados</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer style="max-width:1050px;margin:22px auto;padding:16px 24px;color:#394460;font-size:13px;line-height:1.65;text-align:center">
+<p><strong>Divulgación de afiliación:</strong> Algunos enlaces a Amazon.ca son enlaces de afiliado. Feler puede recibir una comisión por compras que cumplan los requisitos, sin costo adicional por utilizar el enlace.</p>
+<p lang="en">As an Amazon Associate I earn from qualifying purchases.</p>
+</footer>
+<script src="js/productos-ca-v12.js"></script>
+<script src="js/productos-ninos-belleza-v3.js"></script>
+<script src="js/estados-ca-v5.js"></script>
+<script>
+const felerCategory = new URLSearchParams(location.search).get('categoria') || 'aspiradoras';
+document.querySelectorAll('.feler-categories a').forEach(a => {
+  if(a.dataset.cat === felerCategory){a.classList.add('selected');a.setAttribute('aria-current','page')}
+});
+if(felerCategory === 'aspiradoras') {
+
+    // V19: barra de progreso sincronizada con el estado real del cuestionario.
+    const progressSteps = [...document.querySelectorAll('.progress-card .progress-step')];
+    function setProgress(step) {
+        progressSteps.forEach((el, index) => {
+            const number = index + 1;
+            el.classList.toggle('active', number === step);
+            el.classList.toggle('completed', number < step);
+            if (number === step) el.setAttribute('aria-current', 'step');
+            else el.removeAttribute('aria-current');
+        });
+        const line = document.querySelector('.progress-card .progress-line');
+        if (line) line.style.setProperty('--feler-progress', `${(step - 1) / 3 * 100}%`);
+    }
+    setProgress(1);
+
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("q") || "";
+    const normalizedQuery = query.toLowerCase();
+
+    const userQuery = document.getElementById("user-query");
+    const questionCount = document.getElementById("question-count");
+    const questionTitle = document.getElementById("question-title");
+    const questionHelp = document.getElementById("question-help");
+    const answerGrid = document.getElementById("answer-grid");
+    const nextButton = document.querySelector(".next-button");
+    const backButton = document.querySelector(".back-button");
+
+    if (query) userQuery.textContent = "“" + query + "”";
+
+    // Datos que ya podamos deducir de la búsqueda inicial.
+    const answers = {};
+    if (normalizedQuery.includes("apartamento")) answers.home = "apartamento";
+    else if (normalizedQuery.includes("casa")) answers.home = "casa";
+
+    if (normalizedQuery.includes("gato")) answers.pet = "gato";
+    else if (normalizedQuery.includes("perro")) answers.pet = "perro";
+
+    if (normalizedQuery.includes("robot")) answers.preference = "robot";
+    if (normalizedQuery.includes("inalámbrica") || normalizedQuery.includes("inalambrica")) answers.preference = "cordless";
+
+    const questions = {
+        home: {
+            title: "¿Dónde la vas a usar principalmente?",
+            help: "El tipo de vivienda nos ayuda a valorar autonomía, maniobrabilidad y necesidad de subir escaleras.",
+            answers: [
+                ["apartamento", "⌂", "Apartamento", "Normalmente una sola planta"],
+                ["casa", "⌂", "Casa", "Una o más plantas"],
+                ["otro", "＋", "Otro", "Otro tipo de espacio"]
+            ]
+        },
+        size: {
+            title: "¿Qué tamaño tiene aproximadamente tu espacio?",
+            help: "Esto puede cambiar la autonomía y capacidad que realmente necesitas.",
+            answers: [
+                ["menos-50", "⌂", "Menos de 50 m²", "Espacio pequeño"],
+                ["50-100", "⌂", "50 a 100 m²", "Espacio mediano"],
+                ["mas-100", "⌂", "Más de 100 m²", "Espacio grande"],
+                ["no-se", "?", "No estoy seguro", "Podemos continuar sin este dato"]
+            ]
+        },
+        floor: {
+            title: "¿Qué superficies necesitas limpiar?",
+            help: "El suelo duro y las alfombras pueden requerir características diferentes.",
+            answers: [
+                ["duro", "▦", "Principalmente suelo duro", "Madera, cerámica, vinilo o similar"],
+                ["alfombra", "▤", "Principalmente alfombra", "Alfombra o moqueta en gran parte del espacio"],
+                ["mixto", "◫", "Suelo duro y alfombras", "Necesito buen desempeño en ambos"],
+                ["otro", "＋", "Otro / No estoy seguro", "Lo tendremos en cuenta después"]
+            ]
+        },
+        pet: {
+            title: "¿Hay mascotas en casa?",
+            help: "El pelo puede hacer importantes el cepillo anti-enredos, la filtración y la facilidad de mantenimiento.",
+            answers: [
+                ["perro", "●", "Sí, perro", "Quiero tener en cuenta el pelo"],
+                ["gato", "●", "Sí, gato", "Quiero tener en cuenta el pelo"],
+                ["varias", "●", "Sí, varias mascotas", "El pelo es una prioridad"],
+                ["no", "—", "No", "No necesito priorizar pelo de mascotas"]
+            ]
+        },
+        stairs: {
+            title: "¿Necesitas limpiar escaleras?",
+            help: "Si hay escaleras, el peso, el formato y la facilidad para transportarla pueden ser decisivos.",
+            answers: [
+                ["muchas", "↗", "Sí, con frecuencia", "Necesito moverla fácilmente entre niveles"],
+                ["algunas", "↗", "Algunas veces", "Es útil que sea manejable"],
+                ["no", "—", "No", "Las escaleras no son una prioridad"]
+            ]
+        },
+        cleaning_goal: {
+            title: "¿Qué quieres que haga principalmente?",
+            help: "No necesitas saber qué tipo de aspiradora comprar. Feler puede decidir qué formatos encajan con esta necesidad.",
+            answers: [
+                ["aspirar", "◎", "Aspirar bien", "Quiero ocuparme principalmente del polvo, migas y pelo"],
+                ["aspirar-fregar", "≈", "Aspirar y lavar el piso", "Quiero combinar aspirado y fregado"],
+                ["automatico", "↻", "Limpiar automáticamente", "Quiero reducir al mínimo el trabajo diario"],
+                ["no-se", "?", "No estoy seguro", "Quiero que Feler compare las posibilidades"]
+            ]
+        },
+        automation: {
+            title: "¿Cuánto quieres automatizar la limpieza?",
+            help: "Esto nos ayuda a distinguir entre una aspiradora manual y un robot con distintos niveles de automatización.",
+            answers: [
+                ["maxima", "↻", "Lo máximo posible", "Quiero intervenir lo menos posible"],
+                ["robot-basico", "◎", "Que limpie solo", "No me importa vaciarlo o mantenerlo yo"],
+                ["manual", "●", "Prefiero limpiar yo", "Quiero controlar personalmente la limpieza"],
+                ["indiferente", "↔", "Me es indiferente", "Que Feler valore las demás necesidades"]
+            ]
+        },
+        portability: {
+            title: "¿Qué tan importante es que sea ligera y fácil de mover?",
+            help: "Esto cobra especial importancia en escaleras, viviendas de varios niveles o limpiezas rápidas.",
+            answers: [
+                ["muy", "↗", "Muy importante", "Quiero minimizar peso y esfuerzo"],
+                ["algo", "○", "Algo importante", "Prefiero comodidad si no sacrifico demasiado"],
+                ["no", "—", "No es una prioridad", "Puedo aceptar más peso por otras prestaciones"]
+            ]
+        },
+        filtration: {
+            title: "¿La filtración es especialmente importante para ti?",
+            help: "Podemos priorizar sistemas de filtración más completos cuando esta característica sea relevante.",
+            answers: [
+                ["alta", "◇", "Sí, es importante", "Quiero priorizar una buena filtración"],
+                ["normal", "○", "Algo", "Es positiva, pero no es mi principal criterio"],
+                ["no", "—", "No es una prioridad", "Priorizaré otras características"]
+            ]
+        },
+        budget: {
+            title: "¿Qué presupuesto te gustaría respetar?",
+            help: "Usaremos el precio como límite práctico, pero los precios de Amazon pueden cambiar.",
+            answers: [
+                ["menos-200", "$", "Menos de 200 CAD", "Quiero mantener el costo bajo"],
+                ["200-400", "$$", "200 a 400 CAD", "Busco equilibrio entre precio y prestaciones"],
+                ["400-700", "$$$", "400 a 700 CAD", "Puedo invertir más si vale la pena"],
+                ["700-mas", "$$$$", "Más de 700 CAD", "Acepto opciones premium"],
+                ["flexible", "↔", "Presupuesto flexible", "Priorizaré el ajuste a mis necesidades"]
+            ]
+        },
+        preference: {
+            title: "¿Ya tienes una preferencia de formato?",
+            help: "Es opcional. Si no la tienes, Feler comparará los formatos compatibles con tus respuestas.",
+            answers: [
+                ["cordless", "↗", "Inalámbrica / stick", "Quiero algo manual y fácil de mover"],
+                ["robot", "◎", "Robot", "Quiero automatizar la limpieza"],
+                ["wet-dry", "≈", "Wet/dry", "Me interesa aspirar y lavar"],
+                ["tradicional", "●", "Tradicional", "Upright o canister"],
+                ["handheld", "⌁", "De mano", "Principalmente limpiezas pequeñas o puntuales"],
+                ["abierto", "↔", "No tengo preferencia", "Que Feler decida según mis necesidades"]
+            ]
+        }
+    };
+
+
+    const summaryLabels = {
+        home: "Vivienda",
+        size: "Tamaño",
+        floor: "Superficies",
+        pet: "Mascotas",
+        stairs: "Escaleras",
+        cleaning_goal: "Objetivo",
+        automation: "Automatización",
+        portability: "Portabilidad",
+        filtration: "Filtración",
+        budget: "Presupuesto",
+        preference: "Formato"
+    };
+
+    function getAnswerLabel(key, value) {
+        const question = questions[key];
+        if (!question) return value;
+        const found = question.answers.find((item) => item[0] === value);
+        return found ? found[2] : value;
+    }
+
+    function updateAnswersSummary() {
+        const summary = document.getElementById("answers-summary");
+        if (!summary) return;
+
+        const keys = Object.keys(summaryLabels).filter((key) => key in answers);
+
+        if (keys.length === 0) {
+            summary.className = "answers-summary-empty";
+            summary.innerHTML = "Se irán mostrando aquí a medida que respondas.";
+            return;
+        }
+
+        summary.className = "answers-summary";
+        summary.innerHTML = keys.map((key) => `
+            <li>
+                <b>${summaryLabels[key]}</b>
+                ${getAnswerLabel(key, answers[key])}
+            </li>
+        `).join("");
+    }
+
+    const baseOrder = ["home", "size", "floor", "pet", "stairs", "cleaning_goal"];
+
+    function getQuestionOrder() {
+        const order = [...baseOrder];
+
+        // La automatización solo aporta información adicional si el usuario quiere
+        // limpieza automática o todavía no sabe qué enfoque prefiere.
+        if (answers.cleaning_goal === "automatico" || answers.cleaning_goal === "no-se") {
+            order.push("automation");
+        }
+
+        // El peso importa especialmente cuando el usuario realizará limpieza manual.
+        if (answers.cleaning_goal !== "automatico" || answers.automation === "manual") {
+            order.push("portability");
+        }
+
+        order.push("filtration", "budget", "preference");
+        return order;
+    }
+
+    let history = [];
+    let currentQuestion = null;
+    let editMode = false;
+    let editOrder = [];
+    let editIndex = 0;
+
+    function getPendingQuestions() {
+        return getQuestionOrder().filter((key) => !(key in answers));
+    }
+
+    function renderQuestion(key, restoreSelection = true) {
+        setProgress(1);
+        currentQuestion = key;
+        const question = questions[key];
+        const position = editMode ? editIndex + 1 : history.length + 1;
+
+        questionCount.textContent = "Pregunta " + position;
+        questionTitle.textContent = question.title;
+        questionHelp.textContent = question.help;
+
+        answerGrid.innerHTML = question.answers.map((answer) => `
+            <button class="answer-card" type="button" data-value="${answer[0]}">
+                <span class="answer-icon">${answer[1]}</span>
+                <span class="answer-content">
+                    <strong>${answer[2]}</strong>
+                    <small>${answer[3]}</small>
+                </span>
+            </button>
+        `).join("");
+
+        const cards = answerGrid.querySelectorAll(".answer-card");
+        cards.forEach((card) => {
+            if (restoreSelection && answers[key] === card.dataset.value) card.classList.add("selected");
+            card.addEventListener("click", () => {
+                cards.forEach((item) => item.classList.remove("selected"));
+                card.classList.add("selected");
+                answers[key] = card.dataset.value;
+                updateAnswersSummary();
+                nextButton.disabled = false;
+            });
+        });
+
+        nextButton.textContent = "Siguiente →";
+        nextButton.disabled = !(key in answers);
+        backButton.disabled = editMode ? editIndex === 0 : history.length === 0;
+    }
+
+    function showNextQuestion() {
+        if (editMode && editIndex < editOrder.length) {
+            renderQuestion(editOrder[editIndex], true);
+            return;
+        }
+        const pending = getPendingQuestions();
+        if (pending.length === 0) {
+            setProgress(2);
+            questionCount.textContent = "Listo para analizar";
+            questionTitle.textContent = "Ya tenemos suficiente información para empezar.";
+            questionHelp.textContent = "Feler podrá comparar distintos tipos de aspiradora según tus necesidades, en lugar de limitarse al formato que conocías de antemano.";
+            answerGrid.innerHTML = "";
+            currentQuestion = "ready";
+            nextButton.textContent = "Analizar opciones →";
+            nextButton.disabled = false;
+            backButton.disabled = history.length === 0;
+            return;
+        }
+        renderQuestion(pending[0], false);
+    }
+
+    // V11: filtros de compatibilidad antes de puntuar. Sin precios ni inventario en vivo.
+    function assessProduct(p) {
+        const reasons = [], caveats = [];
+        const cat = p.categoria;
+        const robot = p.automatica === true;
+        const wet = cat === "wet_dry";
+        const portable = cat === "escoba_inalambrica" || cat === "mano";
+        const floor = p.superficies || [];
+        const reject = (message) => ({product:p, eligible:false, message});
+        if (!p.amazonCa || !p.amazonCa.verificado || !/^[A-Z0-9]{10}$/.test(p.amazonCa.asin || "") || p.amazonCa.enlaceAfiliado !== `https://www.amazon.ca/dp/${p.amazonCa.asin}?tag=felerstore-20`) return reject("Ficha Amazon.ca pendiente de verificar");
+        if ((answers.cleaning_goal === "automatico" || ["maxima", "robot-basico"].includes(answers.automation)) && !robot) return reject("La prioridad es que limpie solo; este modelo requiere manejo manual");
+        if (answers.cleaning_goal === "aspirar-fregar" && !p.lava) return reject("No aspira y lava");
+        if (answers.preference === "robot" && !robot) return reject("No es robot");
+        if (answers.preference === "wet-dry" && !wet) return reject("No es aspiradora lavadora de pisos");
+        if (answers.preference === "cordless" && cat !== "escoba_inalambrica") return reject("No es aspiradora escoba inalámbrica");
+        if (answers.preference === "tradicional" && cat !== "vertical_con_cable" && cat !== "trineo") return reject("No es aspiradora tradicional");
+        if (answers.preference === "handheld" && cat !== "mano") return reject("No es aspiradora de mano");
+        if (answers.floor === "duro" && !floor.includes("piso_duro")) return reject("No se ha confirmado su uso en pisos duros");
+        if (answers.floor === "alfombra" && !floor.includes("alfombra")) return reject("No es apta para alfombras como superficie principal");
+        if (answers.floor === "mixto" && !(floor.includes("alfombra") && floor.includes("piso_duro"))) return reject("No cubre adecuadamente pisos duros y alfombras");
+        if (["muchas","algunas"].includes(answers.stairs) && robot) return reject("Un robot no limpia escaleras");
+        if (cat === "mano" && answers.preference !== "handheld") return reject("Una aspiradora de mano no sustituye una aspiradora principal");
+        if (answers.cleaning_goal === "aspirar" && wet && answers.preference !== "wet-dry") return reject("Una lavadora de pisos no es la primera opción para aspirar únicamente");
+        if (answers.cleaning_goal === "aspirar" && robot && answers.portability === "muy") return reject("El robot no satisface la necesidad de limpieza manual portátil");
+        if (answers.automation === "manual" && robot) return reject("El usuario prefiere limpieza manual");
+        let score = 0;
+        if (answers.cleaning_goal === "automatico" && robot) {score += 16; reasons.push("Limpia de forma automática");}
+        if (answers.cleaning_goal === "aspirar-fregar" && p.lava) {score += 8; reasons.push("Aspira y lava");}
+        if (answers.cleaning_goal === "aspirar" && p.aspira) {score += 5; reasons.push("Permite aspirar");}
+        if (answers.floor === "duro" && floor.includes("piso_duro")) {score += 4; reasons.push("Compatible con pisos duros");}
+        if (answers.floor === "alfombra" && floor.includes("alfombra")) {score += 4; reasons.push("Compatible con alfombras");}
+        if (answers.floor === "mixto") {score += 5; reasons.push("Compatible con ambos tipos de superficie");}
+        if (["perro","gato","varias"].includes(answers.pet)) {
+            if (p.mascotas === true) {score += 3; reasons.push("Tiene prestaciones para hogares con mascotas");}
+            else caveats.push("Prestaciones para mascotas no confirmadas");
+        }
+        if (["muchas","algunas"].includes(answers.stairs)) {
+            if (p.escaleras) {score += 3; reasons.push("Puede utilizarse en escaleras");}
+            else caveats.push("No es adecuada para limpiar escaleras");
+        }
+        if (answers.portability === "muy") {
+            if (portable && typeof p.pesoLb === "number" && p.pesoLb <= 9) {score += (p.pesoLb <= 6 ? 7 : 4); reasons.push("Formato inalámbrico; peso anunciado de " + p.pesoLb + " lb");}
+            else caveats.push(typeof p.pesoLb !== "number" ? "Peso sin confirmar; no podemos evaluar bien la portabilidad" : "Portabilidad limitada frente a alternativas más ligeras");
+        }
+        if (answers.filtration === "alta") {
+            if (/hepa sellada/i.test(p.filtracion || "") && !/no verificada/i.test(p.filtracion || "")) {score += 5; reasons.push("Filtración HEPA sellada documentada");}
+            else caveats.push("No tenemos confirmación de filtración HEPA sellada");
+        }
+        if (answers.preference === "robot" && robot) score += 4;
+        if (answers.preference === "wet-dry" && wet) score += 4;
+        if (answers.preference === "abierto" && portable && answers.portability === "muy") score += 2;
+        // V20: ponderar criterios prioritarios y no confundir datos ausentes con prestaciones demostradas.
+        if (["muchas","algunas"].includes(answers.stairs)) {
+            if (portable && p.escaleras === true) {score += 5; reasons.push("Formato portátil para limpiar escaleras");}
+            if (cat === "vertical_con_cable") caveats.push("Comprueba la comodidad de uso en escaleras y la longitud del cable");
+        }
+        if (answers.portability === "muy") {
+            if (portable && typeof p.pesoLb === "number" && p.pesoLb <= 6) score += 4;
+            if (typeof p.pesoLb !== "number") {score -= 3; caveats.push("La portabilidad sigue pendiente de verificar");}
+            if (cat === "vertical_con_cable") score -= 5;
+        } else if (answers.portability === "algo" && portable && typeof p.pesoLb === "number" && p.pesoLb <= 9) score += 2;
+        if (answers.filtration === "alta" && !/hepa sellada/i.test(p.filtracion || "")) score -= 3;
+        if (["perro","gato","varias"].includes(answers.pet) && p.mascotas !== true) score -= 2;
+        if (answers.automation === "maxima" && robot) {score += 18; reasons.push("Limpia sin manejo manual");}
+        if (answers.automation === "robot-basico" && robot) {score += 16; reasons.push("Limpia solo, con mantenimiento manual");}
+        if (answers.automation === "indiferente" && robot) score += 1;
+        if (answers.preference === "tradicional" && (cat === "vertical_con_cable" || cat === "trineo")) score += 5;
+        if (answers.preference === "cordless" && portable) score += 5;
+        if (answers.size === "grande" && robot) score += 2;
+        if (answers.budget && answers.budget !== "flexible") caveats.push("El presupuesto seleccionado no puede validarse sin un precio actualizado y autorizado");
+        return {product:p,eligible:true,score,reasons,caveats};
+    }
+
+    function showResults() {
+        setProgress(3);
+        const catalog = Array.isArray(window.FELER_PRODUCTOS_CA) ? window.FELER_PRODUCTOS_CA : [];
+        currentQuestion = "results";
+        questionCount.textContent = "Resultados preliminares · Canadá";
+        questionTitle.textContent = "Opciones según tus respuestas";
+        questionHelp.textContent = "Ordenadas según tus necesidades y la información que hemos podido comprobar. Las características pendientes de verificar reducen la confianza de la recomendación.";
+        nextButton.style.display = "none";
+        backButton.disabled = false;
+        answerGrid.className = "feler-results";
+        answerGrid.replaceChildren();
+        const intro = document.createElement("div");
+        intro.className = "feler-notice";
+        intro.textContent = "Feler clasifica primero por compatibilidad. La disponibilidad indicada es una observación fechada, NO una consulta en vivo. Puede cambiar en cualquier momento. No mostramos precios ni stock en tiempo real; si indicas un presupuesto, no podemos garantizar que las opciones lo respeten hasta verificar precios con una fuente autorizada. Comprueba el producto y el vendedor en Amazon.ca antes de comprar. Los enlaces incluyen nuestro identificador de asociado.";
+        answerGrid.append(intro);
+        if (answers.budget && answers.budget !== "flexible") {
+            const budgetNote=document.createElement("div");
+            budgetNote.className="feler-notice";
+            budgetNote.textContent="Presupuesto: todavía no podemos comprobar precios actuales de Amazon.ca. Las opciones siguientes se ordenan por necesidades técnicas, NO por precio. Verifica que cada una se ajuste a tu presupuesto antes de comprar.";
+            answerGrid.append(budgetNote);
+        }
+        if (!catalog.length) {
+            intro.textContent = "No se pudo cargar el catálogo. Comprueba que productos-ca-v12.js esté en la carpeta js.";
+            return;
+        }
+        const disponibles = catalog.filter(p => p.amazonCa && p.amazonCa.verificado === true && /^[A-Z0-9]{10}$/.test(p.amazonCa.asin || "") && p.amazonCa.enlaceAfiliado === `https://www.amazon.ca/dp/${p.amazonCa.asin}?tag=felerstore-20`);
+        const pendientes = catalog.length - disponibles.length;
+        if (pendientes) {
+            const estado = document.createElement("p");
+            estado.className = "result-meta";
+            estado.textContent = `Catálogo en revisión: ${disponibles.length} fichas con ASIN registrado y ${pendientes} candidatos sin ASIN confirmado (no se recomiendan). Las fichas con ASIN no garantizan disponibilidad ni precio.`;
+            answerGrid.append(estado);
+        }
+        const estadoOferta = (p) => {
+            const entry = window.FELER_ESTADOS_CA && window.FELER_ESTADOS_CA[p.amazonCa.asin];
+            if (!entry || !["disponible","no_disponible"].includes(entry.estado) || !/^\d{4}-\d{2}-\d{2}$/.test(entry.fecha || "")) return {estado:"desconocido", fecha:null};
+            return entry;
+        };
+        const textoEstado = p => {
+            const e=estadoOferta(p);
+            return e.estado === "disponible" ? `Disponible en última revisión (${e.fecha}); confirmar en Amazon` : e.estado === "no_disponible" ? `Sin existencias en última revisión (${e.fecha}); puede volver` : "Disponibilidad sin comprobar";
+        };
+        const evaluated = disponibles.map(assessProduct);
+        const ranked = evaluated.filter(item => item.eligible).sort((a,b) => b.score - a.score || a.product.modelo.localeCompare(b.product.modelo));
+        if (!ranked.length) {
+            const notice = document.createElement("div");
+            notice.className = "feler-notice";
+            notice.textContent = "Todavía no tenemos una aspiradora suficientemente compatible con tu perfil en este catálogo. Preferimos no recomendarte un producto inadecuado. Puedes modificar tus criterios o volver cuando tengamos más fichas verificadas.";
+            answerGrid.append(notice);
+            return;
+        }
+        const sectionTitle = document.createElement("h3");
+        sectionTitle.className = "feler-section-title";
+        sectionTitle.textContent = `Recomendaciones por prioridad: 1 a ${ranked.length}`;
+        answerGrid.append(sectionTitle);
+        const primeraDisponible = ranked.find(item => estadoOferta(item.product).estado === "disponible");
+        if (primeraDisponible) {
+            const banner=document.createElement("div");
+            banner.className="feler-availability-banner";
+            const first=ranked[0].product;
+            const chosen=primeraDisponible.product;
+            banner.textContent = chosen.id === first.id
+                ? `Prioridad #1 por compatibilidad y disponible en la última revisión: ${chosen.marca} ${chosen.modelo}. Confirma existencias antes de comprar.`
+                : `Mejor opción con disponibilidad observada: ${chosen.marca} ${chosen.modelo} (prioridad #${ranked.indexOf(primeraDisponible)+1}). La prioridad #1 por compatibilidad es ${first.marca} ${first.modelo}. Los estados pueden haber cambiado.`;
+            answerGrid.append(banner);
+        } else {
+            const banner=document.createElement("div");banner.className="feler-notice";
+            banner.textContent="No tenemos ninguna opción con disponibilidad confirmada en la última revisión. Conservamos las recomendaciones por compatibilidad y sus enlaces.";
+            answerGrid.append(banner);
+        }
+        const describe = (p) => p.categoria === "escoba_inalambrica" ? "Inalámbrica" : p.categoria === "robot" ? "Robot" : p.categoria === "wet_dry" ? "Aspira y lava" : p.categoria === "vertical_con_cable" ? "Vertical con cable" : "Otro formato";
+        ranked.forEach((item,index) => {
+            const {product:p,reasons,caveats} = item;
+            const card = document.createElement("article");
+            card.className = "feler-result";
+            const head = document.createElement("div");
+            head.className = "feler-result-head";
+            const symbol = document.createElement("div");
+            symbol.className = "feler-product-symbol";
+            symbol.setAttribute("aria-hidden","true");
+            symbol.textContent = String(index + 1);
+            symbol.setAttribute("aria-label", `Prioridad ${index + 1}`);
+            const heading = document.createElement("div");
+            const label = document.createElement("div");
+            label.className = "match-label";
+            label.textContent = `Prioridad #${index+1} de ${ranked.length} · evaluación preliminar`;
+            const title = document.createElement("h3");
+            title.textContent = `${p.marca} ${p.modelo}`;
+            heading.append(label,title);
+            head.append(symbol,heading);
+            const availability = document.createElement("p");
+            availability.className = "feler-availability";
+            availability.textContent = textoEstado(p);
+            availability.dataset.estado = estadoOferta(p).estado;
+            const chips = document.createElement("div");
+            chips.className = "feler-chip-row";
+            [describe(p), typeof p.pesoLb === "number" ? `Peso declarado: ${p.pesoLb} lb` : "Peso por confirmar", p.filtracion && /hepa sellada/i.test(p.filtracion) && !/no confirmada|no verificada/i.test(p.filtracion) ? "HEPA sellada declarada" : "Filtración por confirmar"].forEach(t => {const chip=document.createElement("span");chip.className="feler-chip";chip.textContent=t;chips.append(chip)});
+            const why = document.createElement("p");
+            why.textContent = `Por qué encaja: ${reasons.join(" · ") || "Coincide con los requisitos básicos"}.`;
+            const limits = document.createElement("p");
+            limits.textContent = `A tener en cuenta: ${[...new Set([...caveats,...(p.limitaciones || [])])].join(" · ") || "Consulta la ficha antes de comprar"}.`;
+            const source = document.createElement("a");
+            source.className = "feler-link";
+            source.href = p.amazonCa.enlaceAfiliado;
+            source.target = "_blank";
+            source.rel = "noopener noreferrer";
+            source.textContent = "Ver producto en Amazon.ca ↗";
+            const note = document.createElement("p");
+            note.className = "result-meta";
+            note.textContent = "Enlace de afiliado: Feler puede recibir una comisión por compras que cumplan los requisitos. Verifica variante, vendedor, precio y disponibilidad en Amazon.ca.";
+            card.append(head,availability,chips,why,limits,source,note);
+            answerGrid.append(card);
+        });
+        if (ranked.length > 1) {
+            const heading = document.createElement("h3");
+            heading.className = "feler-section-title";
+            heading.textContent = "Comparación rápida";
+            answerGrid.append(heading);
+            const wrap = document.createElement("div");
+            wrap.className = "feler-compare-wrap";
+            const table = document.createElement("table");
+            table.className = "feler-compare";
+            const thead = document.createElement("thead");
+            const tr = document.createElement("tr");
+            ["Característica", ...ranked.map((x,i)=>`#${i+1} · ${x.product.marca} ${x.product.modelo}`)].forEach(t=>{const th=document.createElement("th");th.textContent=t;tr.append(th)});
+            thead.append(tr);table.append(thead);
+            const tbody=document.createElement("tbody");
+            const rows = [
+              ["Disponibilidad (última revisión)",p=>textoEstado(p)],
+              ["Formato",p=>describe(p)],
+              ["Superficies",p=>(p.superficies||[]).map(s=>s==="piso_duro"?"Pisos duros":s==="alfombra"?"Alfombras":s).join(" y ")||"Por confirmar"],
+              ["Peso declarado",p=>typeof p.pesoLb==="number"?`${p.pesoLb} lb`:"Por confirmar"],
+              ["Filtración",p=>p.filtracion||"Por confirmar"],
+              ["Mascotas",p=>p.mascotas===true?"Prestaciones declaradas":p.mascotas===false?"No priorizado":"Por confirmar"],
+              ["Precio",p=>"Consultar en Amazon.ca"]
+            ];
+            rows.forEach(([name,fn])=>{const row=document.createElement("tr");[name,...ranked.map(x=>fn(x.product))].forEach(t=>{const td=document.createElement("td");td.textContent=t;row.append(td)});tbody.append(row)});
+            table.append(tbody);wrap.append(table);answerGrid.append(wrap);
+            const note=document.createElement("p");note.className="feler-disclaimer";note.textContent="El orden se basa en compatibilidad, no en stock. Las observaciones de disponibilidad están fechadas y pueden quedar obsoletas; Feler aún no consulta inventario en tiempo real. Los datos faltantes no se suponen.";answerGrid.append(note);
+        }
+        setProgress(4);
+    }
+
+    nextButton.addEventListener("click", () => {
+        if (nextButton.disabled || !currentQuestion) return;
+        if (currentQuestion === "ready") {
+            showResults();
+            return;
+        }
+        if (editMode) {
+            editIndex++;
+            if (editIndex >= editOrder.length) {
+                editMode = false;
+                history = editOrder.slice();
+            }
+        } else {
+            history.push(currentQuestion);
+        }
+        updateAnswersSummary();
+        showNextQuestion();
+    });
+
+    backButton.addEventListener("click", () => {
+        if (editMode) {
+            if (editIndex > 0) {editIndex--; renderQuestion(editOrder[editIndex], true);}
+            return;
+        }
+        if (history.length === 0) return;
+        if (currentQuestion === "results") {
+            nextButton.style.display = "";
+            answerGrid.className = "answer-grid";
+            showNextQuestion();
+            return;
+        }
+        if (currentQuestion && currentQuestion !== "ready") delete answers[currentQuestion];
+        const previous = history.pop();
+        updateAnswersSummary();
+        renderQuestion(previous, true);
+    });
+
+    document.querySelector('.edit-query').addEventListener('click', () => {
+        editOrder = getQuestionOrder();
+        editMode = true;
+        editIndex = 0;
+        history = [];
+        nextButton.style.display = '';
+        answerGrid.className = 'answer-grid';
+        showNextQuestion();
+        document.querySelector('.question-card').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+    showNextQuestion();
+
+} else {
+const configs = {
+ ninos: {
+  query:'“Busco ropa interior infantil”',
+  heading:'Ropa interior infantil: encontremos la opción adecuada',
+  intro:'Te ayudamos a definir qué características buscar según la etapa de tu niña o niño.',
+  questions:[
+   ['Para quién','¿Buscas ropa interior para niña o niño?',[['nina','Niña'],['nino','Niño'],['indiferente','Sin preferencia / cualquiera']]],
+   ['Edad','¿Para qué edad buscas ropa interior?',[['2-3','2 a 3 años'],['4-5','4 a 5 años'],['6-8','6 a 8 años'],['otra','Otra edad o no estoy seguro']]],
+   ['Uso','¿Cuál es el objetivo principal?',[['transicion','Transición del pañal'],['diario','Ropa interior de uso diario'],['noche','Para dormir'],['otro','Todavía no lo sé']]],
+   ['Absorción','¿Necesitas una capa absorbente?',[['si','Sí, para pequeños accidentes'],['no','No, ropa interior convencional'],['duda','No estoy seguro']]],
+   ['Material','¿Qué material prefieres?',[['algodon','Algodón'],['flexible','Tela elástica y suave'],['indiferente','Sin preferencia']]],
+   ['Talla','¿Cómo prefieres elegir la talla?',[['medidas','Por cintura y tabla de medidas'],['edad','Por edad indicada'],['ayuda','Necesito orientación']]],
+   ['Cantidad','¿Qué cantidad buscas?',[['pocas','1 a 5 unidades'],['pack','Paquete de 6 a 12'],['indiferente','Sin preferencia']]]
+  ],
+  conclusion:'La absorción, el ajuste y la composición deben verificarse por separado en cada ficha. Una prenda de algodón no necesariamente es una prenda de aprendizaje absorbente.'
+ },
+ belleza: {
+  query:'“Busco productos para hacerme las uñas”',
+  heading:'Manicura en casa: encontremos el sistema adecuado',
+  intro:'Distingamos los productos según el método de aplicación y el equipo necesario.',
+  questions:[
+   ['Experiencia','¿Qué experiencia tienes haciendo manicura?',[['principiante','Estoy empezando'],['intermedia','Tengo algo de experiencia'],['avanzada','Tengo experiencia']]],
+   ['Producto','¿Qué buscas principalmente?',[['lapiz','Lápices de esmalte'],['esmalte','Esmalte o gel'],['kit','Kit completo'],['lampara','Lámpara de curado']]],
+   ['Curado','¿Tienes una lámpara UV/LED?',[['si','Sí'],['no','No'],['evitar','Prefiero productos sin lámpara']]],
+   ['Duración','¿Qué valoras más?',[['rapidez','Aplicación rápida'],['duracion','Duración de la manicura'],['retiro','Facilidad de retirar el producto']]],
+   ['Acabado','¿Qué acabado prefieres?',[['natural','Tonos naturales'],['color','Colores vivos'],['variado','Un surtido de colores']]],
+   ['Presupuesto','¿Qué presupuesto aproximado tienes?',[['menos25','Menos de 25 CAD'],['25-50','25 a 50 CAD'],['mas50','Más de 50 CAD'],['flexible','Flexible']]]
+  ],
+  conclusion:'No todos los lápices de uñas ni los esmaltes en gel curan del mismo modo. Antes de recomendar un producto comprobaremos si necesita lámpara, qué tipo de lámpara admite y qué incluye el paquete.'
+ }
+};
+const cfg=configs[felerCategory] || configs.ninos;
+const userQuery=document.getElementById('user-query');userQuery.textContent=cfg.query;
+const title=document.getElementById('question-title');
+const help=document.getElementById('question-help');
+const count=document.getElementById('question-count');
+const grid=document.getElementById('answer-grid');
+const next=document.querySelector('.next-button');
+const back=document.querySelector('.back-button');
+const summary=document.getElementById('answers-summary');
+const progress=[...document.querySelectorAll('.progress-card .progress-step')];
+const image=document.querySelector('.context-photo');
+if(image){
+  const categoryVisuals={
+    ninos:{src:'assets/images/feler-contexto-ninos-aprobada.webp',alt:'Habitación infantil luminosa con osito, juguetes y libros'},
+    belleza:{src:'assets/images/feler-contexto-belleza-aprobada.webp',alt:'Manicura con esmaltes pastel y uñas cuidadas en un espacio luminoso'}
+  };
+  const visual=categoryVisuals[felerCategory];
+  if(visual){image.src=visual.src;image.alt=visual.alt;image.parentElement.style.display='block';image.style.display='block';image.style.objectFit='cover';image.style.background='transparent';}
+}
+const answers={};let position=0;
+function progressTo(step){progress.forEach((el,i)=>{el.classList.toggle('active',i+1===step);el.classList.toggle('completed',i+1<step)});const line=document.querySelector('.progress-line');if(line)line.style.setProperty('--feler-progress',`${(step-1)/3*100}%`)}
+function updateSummary(){summary.className='answers-summary';summary.replaceChildren();cfg.questions.forEach(([label,,options],i)=>{if(!(i in answers))return;const li=document.createElement('li');const b=document.createElement('b');b.textContent=label;li.append(b,document.createTextNode(options.find(o=>o[0]===answers[i])?.[1]||answers[i]));summary.append(li)})}
+function felerAnswerIcon(category,question,value){
+ const paths={
+ child:'<circle cx="12" cy="7" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/>',
+ girl:'<circle cx="12" cy="8" r="3"/><path d="M6 8c0-5 12-5 12 0M5 21v-2a7 7 0 0 1 14 0v2M6 9l-2 4m14-4 2 4"/>',
+ boy:'<circle cx="12" cy="8" r="3"/><path d="M7 5l3-2 3 2 4-1M5 21v-2a7 7 0 0 1 14 0v2"/>',
+ any:'<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 21v-2a7 7 0 0 1 14 0v2m2-8a5 5 0 0 1 4 5v3"/>',
+ calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18"/>',
+ moon:'<path d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/>',
+ shirt:'<path d="m8 3-5 4 3 5 3-2v11h6V10l3 2 3-5-5-4-2 2h-4Z"/>',
+ droplet:'<path d="M12 2s-7 8-7 13a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/>',
+ layers:'<path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5m-18 5 9 5 9-5"/>',
+ ruler:'<path d="M3 8 8 3l13 13-5 5L3 8Zm6 0 2-2m1 5 2-2m1 5 2-2"/>',
+ package:'<path d="m3 7 9-4 9 4v10l-9 4-9-4V7Zm0 0 9 4 9-4m-9 4v10"/>',
+ nail:'<path d="M7 21h10a3 3 0 0 0 3-3v-3a2 2 0 0 0-4 0v-4a2 2 0 0 0-4 0V8a2 2 0 0 0-4 0v7l-1-2a2 2 0 0 0-3 2l3 6Z"/><path d="M8 5V3m4 3V2m4 7V5"/>',
+ sparkles:'<path d="m12 3 1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3Zm7 13 .7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16Z"/>',
+ light:'<circle cx="12" cy="12" r="4"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M19 5l-2 2M7 17l-2 2"/>',
+ clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+ check:'<circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/>',
+ wallet:'<rect x="3" y="6" width="18" height="15" rx="2"/><path d="M3 10h18m-5 5h2"/>',
+ home:'<path d="m3 11 9-8 9 8v10H3V11Zm6 10v-7h6v7"/>'};
+ let kind='check';
+ if(category==='ninos'){
+  const types=[value==='nina'?'girl':value==='nino'?'boy':'any','calendar',value==='noche'?'moon':'shirt','droplet','layers','ruler','package'];kind=types[question]||'check';
+ }else if(category==='belleza')kind=['nail','sparkles','light','clock','sparkles','wallet'][question]||'nail';
+ else kind=['home','ruler','layers','check','clock','wallet'][question]||'home';
+ return '<svg viewBox="0 0 24 24" aria-hidden="true">'+paths[kind]+'</svg>';
+}
+function render(){
+ if(position<cfg.questions.length){
+  progressTo(position<2?1:position<cfg.questions.length-1?2:3);
+  const [label,q,options]=cfg.questions[position];count.textContent=`Pregunta ${position+1} de ${cfg.questions.length}`;title.textContent=q;help.textContent=cfg.intro;grid.className='answer-grid';grid.replaceChildren();
+  options.forEach(([value,text])=>{const b=document.createElement('button');b.type='button';b.className='answer-card'+(answers[position]===value?' selected':'');b.innerHTML='<span class="answer-icon">'+felerAnswerIcon(felerCategory,position,value)+'</span><span class="answer-content"><strong></strong></span>';b.querySelector('strong').textContent=text;b.addEventListener('click',()=>{answers[position]=value;grid.querySelectorAll('.answer-card').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');next.disabled=false;updateSummary()});grid.append(b)});
+  next.textContent=position===cfg.questions.length-1?'Ver evaluación →':'Siguiente →';next.disabled=!(position in answers);back.disabled=position===0;next.style.display='';
+ }else{
+  progressTo(4);count.textContent='Evaluación preliminar';title.textContent=cfg.heading;
+  help.textContent='Resultados preliminares: algunas fichas se comprobaron en Amazon.ca mediante capturas, otras siguen pendientes. Si no hay coincidencias, ofrecemos una búsqueda externa no evaluada por Feler.';
+  grid.className='';grid.replaceChildren();
+  const notice=document.createElement('div');notice.className='feler-note';
+  const h=document.createElement('h3');h.textContent='Tus criterios de selección';notice.append(h);
+  cfg.questions.forEach(([label,,options],i)=>{const p=document.createElement('p');const b=document.createElement('strong');b.textContent=label+': ';p.append(b,document.createTextNode(options.find(o=>o[0]===answers[i])?.[1]||'Sin responder'));notice.append(p)});
+  const caution=document.createElement('p');caution.textContent=cfg.conclusion;notice.append(caution);
+  const info=document.createElement('p');info.textContent='Resultados agrupados por modelo (no repetimos colores, tallas ni variantes). Catálogo preliminar: algunas fichas se comprobaron mediante capturas y otras provienen de fuentes secundarias. La ficha comprobada no garantiza todas las tallas, variantes, precios ni el stock actual de Amazon.ca. No mostramos precios ni disponibilidad. Los enlaces incorporan el ID de asociado felerstore-20.';notice.append(info);grid.append(notice);
+  const catalog=(window.FELER_CATALOGO_NUEVO?.[felerCategory]||[]).filter(p=>p.asin!=='B0FKH23YX7');
+  const scored=catalog.map(p=>{
+   let score=0;let exclude=false;let reasons=[];
+   if(felerCategory==='ninos'){
+    const genero=answers[0],uso=answers[2],abs=answers[3],edad=answers[1];
+    if(genero!=='indiferente' && p.genero && p.genero!=='sin_verificar' && p.genero!=='unisex' && p.genero!==genero)exclude=true;
+    if(genero!=='indiferente' && p.genero==='sin_verificar')reasons.push('Modelo sin clasificación de niña/niño confirmada: comprobar ficha');
+    if(uso==='diario' && p.tipo!=='diario')exclude=true;
+    if(uso==='noche' && p.tipo!=='noche')exclude=true;
+    if(uso==='transicion' && p.tipo!=='aprendizaje')exclude=true;
+    if(abs==='no' && p.absorcion==='si')exclude=true;
+    if(abs==='si' && p.absorcion!=='si')exclude=true;
+    if(Array.isArray(p.edades)&&p.edades.includes(edad)){score+=4;reasons.push('Rango de edad orientativo, talla por confirmar');}else if(edad!=='otra'){exclude=true;}
+    if(uso==='transicion'&&p.tipo==='aprendizaje'){score+=7;reasons.push('Diseñado para aprendizaje');}
+    if(uso==='noche'&&p.tipo==='noche'){score+=7;reasons.push('Orientado a uso nocturno');}
+    if(abs==='si'&&p.absorcion==='si'){score+=4;reasons.push('Capa absorbente declarada');}
+    if(answers[6]===p.cantidad){score+=2;reasons.push('Cantidad de prendas solicitada');}
+    if(answers[4]==='algodon'){if(p.material==='no_algodon')exclude=true;else if(p.material==='algodon'){score+=3;reasons.push('Algodón confirmado en catálogo');}else reasons.push('Algodón no confirmado: revisar antes de comprar');}
+   }else{
+    const tipo=answers[1],curado=answers[2];
+    if(tipo==='lampara'&&p.tipo!=='lampara')exclude=true;
+    if(tipo==='kit'&&p.tipo!=='kit')exclude=true;
+    if(tipo==='lapiz'&&p.tipo!=='lapiz')exclude=true;
+    if(tipo==='esmalte'&& !['esmalte','kit'].includes(p.tipo))exclude=true;
+    if(curado==='evitar' && p.lampara!=='no')exclude=true;
+    if(curado==='no' && (p.lampara==='si'||p.lampara==='sin_verificar'))exclude=true;
+    if(curado==='no' && p.lampara==='equipo' && tipo!=='lampara')exclude=true;
+    if(curado==='evitar' && tipo==='lampara')exclude=true;
+    // Una lámpara por sí sola no resuelve la necesidad de un kit de iniciación.
+    if(curado==='no' && tipo==='kit' && p.lampara!=='incluida')exclude=true;
+    if(p.tipo===tipo){score+=7;reasons.push('Tipo de producto solicitado');}
+    if(curado==='evitar'&&p.lampara==='no'){score+=6;reasons.push('No requiere lámpara');}
+    if(curado==='no'&&p.lampara==='incluida'){score+=3;reasons.push('Kit con lámpara declarada');}
+    if(answers[3]==='rapidez'&&p.rapidez){score+=4;reasons.push('Secado rápido declarado');}
+    if(answers[4]===p.acabado){score+=3;reasons.push('Acabado solicitado');}
+   }
+   return {p,score,exclude,reasons};
+  }).filter(x=>!x.exclude).sort((a,b)=>b.score-a.score);
+  // V24: una sola recomendación por modelo/familia; conservar el candidato de mayor puntuación.
+  const seenFamilies=new Set();
+  const distinct=scored.filter(item=>{const key=item.p.familia||item.p.asin;if(seenFamilies.has(key))return false;seenFamilies.add(key);return true;});
+  if(felerCategory==='belleza'&&answers[1]==='lampara'&&answers[2]==='evitar'){const conflict=document.createElement('p');conflict.textContent='Tus respuestas se contradicen: has pedido una lámpara y, a la vez, prefieres evitarla. Modifica una de las dos opciones para recibir resultados pertinentes.';grid.append(conflict)}
+  const heading=document.createElement('h3');heading.style.margin='26px 0 14px';heading.textContent=`Recomendaciones por prioridad: ${distinct.length ? '1 a '+distinct.length : 'sin coincidencias en el catálogo actual'}`;grid.append(heading);
+  if(!distinct.length){const empty=document.createElement('p');empty.textContent=felerCategory==='belleza'&&answers[1]==='lapiz'?'No hay lápices de esmalte compatibles con el requisito de curado indicado: los ASIN localizados no confirman ese dato. No los sustituimos por otros productos.':'Todavía no tenemos un producto documentado para esta combinación. No vamos a cambiar tus preferencias ni inventar características para mostrar un resultado. Puedes volver atrás y ajustar algún criterio, o consultar la categoría en Amazon.ca.';grid.append(empty)}
+  {const search=document.createElement('a');const terms=felerCategory==='ninos'?[answers[0]==='nina'?'girls':answers[0]==='nino'?'boys':'kids',answers[2]==='diario'?'kids cotton underwear briefs':answers[2]==='noche'?'kids overnight training underwear':'toddler potty training underwear',answers[1]==='2-3'?'2T 3T':answers[1]==='4-5'?'4T 5T':answers[1]==='6-8'?'6 8 years':'',answers[3]==='si'?'absorbent':'',answers[6]==='pack'?'multipack':''].filter(Boolean).join(' '):[answers[1]==='lapiz'?'nail polish pen':answers[1]==='kit'?'nail kit':answers[1]==='lampara'?'nail LED UV lamp':'nail polish',answers[2]==='evitar'?'no UV lamp needed':answers[2]==='no'?'starter kit with lamp':'',answers[4]==='natural'?'nude':answers[4]==='color'?'bright colors':''].filter(Boolean).join(' ');search.href='https://www.amazon.ca/s?k='+encodeURIComponent(terms)+'&tag=felerstore-20';search.target='_blank';search.rel='noopener noreferrer';search.textContent='Explorar más alternativas en Amazon.ca (búsqueda externa, no evaluada por Feler) ↗';grid.append(search)}
+  distinct.forEach(({p,reasons},i)=>{
+   const card=document.createElement('div');card.style.cssText='border:1px solid #e0e3f6;border-radius:18px;padding:20px;margin:14px 0;background:white';
+   const label=document.createElement('p');label.style.cssText='font-weight:700;color:#5c4bee';label.textContent=`Prioridad #${i+1} de ${distinct.length} · ${p.ficha_ca_verificada?'Ficha Amazon.ca comprobada por captura (variante y stock por revisar)':'ASIN localizado, ficha pendiente de comprobación'}`;
+   const name=document.createElement('h3');name.textContent=p.nombre;
+   const asin=document.createElement('p');asin.textContent=`ASIN: ${p.asin} · Disponibilidad actual no verificada`;
+   const why=document.createElement('p');why.textContent='Por qué aparece: '+(reasons.join(' · ')||'Coincidencia preliminar de categoría')+'.';
+   const warn=document.createElement('p');warn.textContent='Por comprobar: '+p.observacion;
+   const variants=document.createElement('p');variants.textContent=p.variantes?'Este modelo tiene otras variantes registradas. El enlace abre una variante representativa; revisa las opciones de talla, color o presentación en Amazon.ca.':'El enlace abre la ficha de esta referencia; revisa las variantes disponibles en Amazon.ca.';
+   const link=document.createElement('a');link.href=`https://www.amazon.ca/dp/${p.asin}?tag=felerstore-20`;link.target='_blank';link.rel='noopener noreferrer sponsored';link.className='next-button';link.style.cssText='display:inline-block;text-decoration:none;padding:12px 17px;margin-top:10px';link.textContent='Consultar ficha en Amazon.ca ↗';
+   const disclosure=document.createElement('p');disclosure.style.cssText='font-size:12px;margin-top:12px';disclosure.textContent='Enlace de afiliado: Feler puede recibir una comisión por compras que cumplan los requisitos. Comprueba producto, variante, precio y disponibilidad.';
+   card.append(label,name,asin,why,warn,variants,link,disclosure);grid.append(card);
+  });
+  next.style.display='none';back.disabled=false;
+ }
+}
+next.addEventListener('click',()=>{if(position<cfg.questions.length && position in answers){position++;render()}});
+back.addEventListener('click',()=>{if(position>0){position--;render()}});
+document.querySelector('.edit-query').addEventListener('click',()=>{position=0;render();document.querySelector('.question-card').scrollIntoView({behavior:'smooth',block:'start'});});
+render();
+}
+</script>
+</body>
+</html>

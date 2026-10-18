@@ -15,7 +15,7 @@
     padding: 34px 36px 22px;
     overflow: hidden;
 
-    border: 1px solid rgba(217, 222, 235, 0.82);
+    border: 1px solid var(--feler-outline);
     border-radius: 30px;
 
     background:
@@ -62,7 +62,7 @@
     justify-content: center;
     gap: 9px;
 
-    border: 1px solid rgba(226, 229, 239, 0.95);
+    border: 1px solid var(--feler-outline);
     border-radius: 999px;
 
     background: rgba(255, 255, 255, 0.88);
@@ -165,7 +165,7 @@
     align-items: center;
     gap: 10px;
 
-    border: 1px solid rgba(112, 108, 242, 0.30);
+    border: 1px solid var(--feler-outline);
     border-radius: 25px;
 
     background: #ffffff;
@@ -393,7 +393,7 @@
     min-height: 33px;
     padding: 0 14px;
 
-    border: 1px solid rgba(225, 228, 237, 0.92);
+    border: 1px solid var(--feler-outline);
     border-radius: 999px;
 
     background: rgba(255, 255, 255, 0.86);

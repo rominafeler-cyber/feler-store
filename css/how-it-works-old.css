@@ -155,7 +155,7 @@
 
     overflow: visible;
 
-    border: 1px solid rgba(220, 224, 238, 0.92);
+    border: 1px solid var(--feler-outline);
     border-radius: 28px;
 
     background:
@@ -210,7 +210,7 @@
     display: grid;
     place-items: center;
 
-    border: 1px solid rgba(103, 109, 239, 0.16);
+    border: 1px solid var(--feler-outline);
     border-radius: 50%;
 
     background:
@@ -407,7 +407,7 @@
     display: grid;
     place-items: center;
 
-    border: 1px solid rgba(103, 109, 239, 0.13);
+    border: 1px solid var(--feler-outline);
     border-radius: 50%;
 
     background:

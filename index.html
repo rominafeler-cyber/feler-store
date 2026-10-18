@@ -1,833 +1,242 @@
 <!DOCTYPE html>
+
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Feler | Encuentra la mejor decisión</title>
-
-    <meta
-        name="description"
-        content="No recomendamos productos. Te ayudamos a entender cuál realmente te conviene."
-    >
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:wght@500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/categories.css">
-    <link rel="stylesheet" href="css/how-feler-works.css">
-    <link rel="stylesheet" href="css/featured-products.css">
-    <link rel="stylesheet" href="css/evaluation.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Feler | Encuentra la mejor decisión</title>
+<meta content="No recomendamos productos. Te ayudamos a entender cuál realmente te conviene." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Fraunces:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/variables.css" rel="stylesheet"/>
+<link href="css/components.css" rel="stylesheet"/>
+<link href="css/header.css" rel="stylesheet"/>
+<link href="css/hero.css" rel="stylesheet"/>
+<link href="css/categories.css" rel="stylesheet"/>
+<link href="css/how-feler-works.css" rel="stylesheet"/>
+<link href="css/featured-products.css" rel="stylesheet"/>
+<link href="css/evaluation.css" rel="stylesheet"/>
+<link href="css/footer.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/v28.css" rel="stylesheet"/></head>
 <body>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="Feler, página principal" class="brand" data-i18n-aria-label="header.homeLabel" href="index.html">
+<span aria-hidden="true" class="brand-mark">
+<span class="brand-shape brand-shape-one"></span>
+<span class="brand-shape brand-shape-two"></span>
+<span class="brand-shape brand-shape-three"></span>
+</span>
+<span class="brand-name">FELER</span>
+</a>
+<nav aria-label="Navegación principal" class="main-navigation" data-i18n-aria-label="header.navigationLabel"><a href="como-funciona.html">Cómo funciona</a><a href="categorias.html">Categorías</a><a href="sobre-feler.html">Sobre Feler</a><a class="featured-nav" href="recomendados.html">Productos recomendados</a></nav>
+<div class="header-actions"><a class="feler-heart" href="favoritos.html" aria-label="Mis favoritos" title="Mis favoritos">♡</a>
 
-    <header class="site-header">
-        <div class="container header-inner">
 
-            <a
-                class="brand"
-                href="#"
-                aria-label="Feler, página principal"
-                data-i18n-aria-label="header.homeLabel"
-            >
-                <span
-                    class="brand-mark"
-                    aria-hidden="true"
-                >
-                    <span class="brand-shape brand-shape-one"></span>
-                    <span class="brand-shape brand-shape-two"></span>
-                    <span class="brand-shape brand-shape-three"></span>
-                </span>
 
-                <span class="brand-name">FELER</span>
-            </a>
-
-            <nav
-                class="main-navigation"
-                aria-label="Navegación principal"
-                data-i18n-aria-label="header.navigationLabel"
-            >
-                <a
-                    href="#como-funciona"
-                    data-i18n="header.howItWorks"
-                >
-                    Cómo funciona
-                </a>
-
-                <a
-                    href="#categorias"
-                    class="nav-with-icon"
-                >
-                    <span data-i18n="header.categories">
-                        Categorías
-                    </span>
-
-                    <span aria-hidden="true">⌄</span>
-                </a>
-
-                <a
-                    href="#sobre-feler"
-                    data-i18n="header.about"
-                >
-                    Sobre Feler
-                </a>
-
-                <a
-                    href="#recursos"
-                    data-i18n="header.resources"
-                >
-                    Recursos
-                </a>
-            </nav>
-
-            <div class="header-actions">
-                <button
-                    class="icon-button"
-                    type="button"
-                    aria-label="Ver favoritos"
-                    data-i18n-aria-label="header.favoritesLabel"
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21.3l7.8-7.8 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"></path>
-                    </svg>
-                </button>
-
-                <button
-                    class="icon-button"
-                    type="button"
-                    aria-label="Abrir mi cuenta"
-                    data-i18n-aria-label="header.accountLabel"
-                >
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <circle cx="12" cy="8" r="4"></circle>
-                        <path d="M4 21a8 8 0 0 1 16 0"></path>
-                    </svg>
-                </button>
-
-                <a
-                    class="login-button"
-                    href="#iniciar-sesion"
-                    data-i18n="header.login"
-                >
-                    Iniciar sesión
-                </a>
-            </div>
-
-            <button
-                class="mobile-menu-button"
-                type="button"
-                aria-label="Abrir menú"
-                aria-expanded="false"
-                data-i18n-aria-label="header.openMenuLabel"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-        </div>
-    </header>
-
-    <main>
-
-        <section class="hero-section">
-
-            <div
-                class="hero-decoration hero-decoration-left"
-                aria-hidden="true"
-            ></div>
-
-            <div
-                class="hero-decoration hero-decoration-right"
-                aria-hidden="true"
-            ></div>
-
-            <div
-                class="hero-dots"
-                aria-hidden="true"
-            ></div>
-
-            <div class="container">
-
-                <div class="hero-card">
-
-                    <img
-                        class="hero-plant"
-                        src="assets/images/feler-plant.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-
-                    <div class="hero-content">
-
-                        <div class="trust-badge">
-                            <svg
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                            >
-                                <path d="M12 3 5 6v5c0 4.6 2.8 8.7 7 10 4.2-1.3 7-5.4 7-10V6l-7-3Z"></path>
-                                <path d="m9 12 2 2 4-4"></path>
-                            </svg>
-
-                            <span data-i18n="hero.badge">
+<a class="feler-user-icon" href="registro.html" aria-label="Acceder a mi cuenta" title="Acceder a mi cuenta"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"/><path d="M4.5 21v-2a7.5 7.5 0 0 1 15 0v2"/></svg></a><a class="login-button" href="registro.html">Sign in</a></div>
+<button aria-expanded="false" aria-label="Abrir menú" class="mobile-menu-button" data-i18n-aria-label="header.openMenuLabel" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</header>
+<main>
+<section class="hero-section">
+<div aria-hidden="true" class="hero-decoration hero-decoration-left"></div>
+<div aria-hidden="true" class="hero-decoration hero-decoration-right"></div>
+<div aria-hidden="true" class="hero-dots"></div>
+<div class="container">
+<div class="hero-card">
+<img alt="" aria-hidden="true" class="hero-plant" src="assets/images/feler-plant.png"/>
+<div class="hero-content">
+<div class="trust-badge">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M12 3 5 6v5c0 4.6 2.8 8.7 7 10 4.2-1.3 7-5.4 7-10V6l-7-3Z"></path>
+<path d="m9 12 2 2 4-4"></path>
+</svg>
+<span data-i18n="hero.badge">
                                 Información clara. Opiniones reales. Mejores decisiones.
                             </span>
-                        </div>
-
-                        <h1>
-                            <span
-                                class="hero-title-main"
-                                data-i18n="hero.titleMain"
-                            >
+</div>
+<h1>
+<span class="hero-title-main" data-i18n="hero.titleMain">
                                 Encuentra la mejor
                             </span>
-
-                            <span data-i18n="hero.titleAccent">
+<span data-i18n="hero.titleAccent">
                                 decisión.
                             </span>
-                        </h1>
-
-                        <p class="hero-description">
-                            <span data-i18n="hero.descriptionFirst">
+</h1>
+<p class="hero-description">
+<span data-i18n="hero.descriptionFirst">
                                 No recomendamos productos.
                             </span>
-
-                            <br>
-
-                            <span data-i18n="hero.descriptionSecond">
+<br/>
+<span data-i18n="hero.descriptionSecond">
                                 Te ayudamos a entender cuál realmente te conviene.
                             </span>
-                        </p>
-
-                        <form
-                            class="search-form"
-                            role="search"
-                        >
-                            <label
-                                class="sr-only"
-                                for="main-search"
-                                data-i18n="hero.searchLabel"
-                            >
+</p>
+<form action="buscar.html" class="search-form" method="get" role="search">
+<label class="sr-only" data-i18n="hero.searchLabel" for="main-search">
                                 ¿Qué estás buscando hoy?
                             </label>
-
-                            <svg
-                                class="search-icon"
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                            >
-                                <circle cx="11" cy="11" r="7"></circle>
-                                <path d="m20 20-4-4"></path>
-                            </svg>
-
-                            <input
-                                id="main-search"
-                                name="search"
-                                type="search"
-                                placeholder="¿Qué estás buscando hoy?"
-                                autocomplete="off"
-                                data-i18n-placeholder="hero.searchPlaceholder"
-                            >
-
-                            <button
-                                type="submit"
-                                data-i18n="hero.searchButton"
-                            >
+<svg aria-hidden="true" class="search-icon" viewbox="0 0 24 24">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m20 20-4-4"></path>
+</svg>
+<input autocomplete="off" data-i18n-placeholder="hero.searchPlaceholder" id="main-search" name="q" placeholder="¿Qué estás buscando hoy?" type="search"/>
+<button data-i18n="hero.searchButton" type="submit">
                                 Buscar
                             </button>
-                        </form>
-
-                        <div class="popular-searches">
-                            <span
-                                class="popular-label"
-                                data-i18n="hero.popularLabel"
-                            >
+</form>
+<div class="popular-searches">
+<span class="popular-label" data-i18n="hero.popularLabel">
                                 Búsquedas populares:
                             </span>
+<button data-destino="buscar-v28.html?categoria=aspiradoras" type="button">Aspiradora para mascotas</button>
+<button data-destino="buscar-v28.html?categoria=ninos" type="button">Ropa interior infantil</button>
+<button data-destino="buscar-v28.html?categoria=belleza" type="button">Esmalte de uñas</button>
+<button data-destino="recomendados.html#fiesta" type="button">Fiesta</button>
 
-                            <button
-                                type="button"
-                                data-i18n="hero.popularPetsVacuum"
-                            >
-                                Aspiradora para mascotas
-                            </button>
-
-                            <button
-                                type="button"
-                                data-i18n="hero.popularChair"
-                            >
-                                Silla ergonómica
-                            </button>
-
-                            <button
-                                type="button"
-                                data-i18n="hero.popularCoffee"
-                            >
-                                Cafetera automática
-                            </button>
-
-                            <button
-                                type="button"
-                                data-i18n="hero.popularSunscreen"
-                            >
-                                Protector solar
-                            </button>
-
-                            <button
-                                class="popular-next"
-                                type="button"
-                                aria-label="Mostrar más búsquedas"
-                                data-i18n-aria-label="hero.moreSearchesLabel"
-                            >
-                                ›
-                            </button>
-                        </div>
-
-                    </div>
-
-                    <div
-                        class="category-panel"
-                        id="categorias"
-                    >
-
-                        <a
-                            class="category-item category-home"
-                            href="#"
-                        >
-                            <span class="category-icon">
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true"
-                                >
-                                    <path d="m3 11 9-8 9 8"></path>
-                                    <path d="M5 10v10h14V10"></path>
-                                    <path d="M9 20v-6h6v6"></path>
-                                </svg>
-                            </span>
-
-                            <strong data-i18n="categories.homeTitle">
+</div><p class="browse-hint"><a href="recomendados.html">¿Prefieres explorar? Ver productos recomendados →</a></p>
+</div>
+<div class="category-panel" id="categorias">
+<a class="category-item category-home" href="buscar-v28.html?categoria=aspiradoras">
+<span class="category-icon">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m3 11 9-8 9 8"></path>
+<path d="M5 10v10h14V10"></path>
+<path d="M9 20v-6h6v6"></path>
+</svg>
+</span>
+<strong data-i18n="categories.homeTitle">
                                 Hogar
                             </strong>
-
-                            <small data-i18n="categories.homeDescription">
+<small data-i18n="categories.homeDescription">
                                 Ideas para tu casa
                             </small>
-                        </a>
-
-                        <a
-                            class="category-item category-tech"
-                            href="#"
-                        >
-                            <span class="category-icon">
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true"
-                                >
-                                    <rect
-                                        x="4"
-                                        y="5"
-                                        width="16"
-                                        height="11"
-                                        rx="1"
-                                    ></rect>
-
-                                    <path d="M2 20h20"></path>
-                                    <path d="m8 16-1 4"></path>
-                                    <path d="m16 16 1 4"></path>
-                                </svg>
-                            </span>
-
-                            <strong data-i18n="categories.technologyTitle">
+</a>
+<a class="category-item category-tech" href="categorias.html" title="Categoría próximamente">
+<span class="category-icon">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="11" rx="1" width="16" x="4" y="5"></rect>
+<path d="M2 20h20"></path>
+<path d="m8 16-1 4"></path>
+<path d="m16 16 1 4"></path>
+</svg>
+</span>
+<strong data-i18n="categories.technologyTitle">
                                 Tecnología
                             </strong>
-
-                            <small data-i18n="categories.technologyDescription">
+<small data-i18n="categories.technologyDescription">
                                 Lo que necesitas saber
                             </small>
-                        </a>
-
-                        <a
-                            class="category-item category-baby"
-                            href="#"
-                        >
-                            <span class="category-icon">
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true"
-                                >
-                                    <circle cx="12" cy="13" r="7"></circle>
-                                    <path d="M9 5c0-2 1.3-3 3-3 1.5 0 2.5.9 2.5 2.2"></path>
-                                    <circle cx="9.5" cy="12" r=".7"></circle>
-                                    <circle cx="14.5" cy="12" r=".7"></circle>
-                                    <path d="M10 15c1.2 1 2.8 1 4 0"></path>
-                                </svg>
-                            </span>
-
-                            <strong data-i18n="categories.babiesTitle">
+</a>
+<a class="category-item category-baby" href="buscar-v28.html?categoria=ninos">
+<span class="category-icon">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="12" cy="13" r="7"></circle>
+<path d="M9 5c0-2 1.3-3 3-3 1.5 0 2.5.9 2.5 2.2"></path>
+<circle cx="9.5" cy="12" r=".7"></circle>
+<circle cx="14.5" cy="12" r=".7"></circle>
+<path d="M10 15c1.2 1 2.8 1 4 0"></path>
+</svg>
+</span>
+<strong data-i18n="categories.babiesTitle">
                                 Bebés y niños
                             </strong>
-
-                            <small data-i18n="categories.babiesDescription">
+<small data-i18n="categories.babiesDescription">
                                 Para cada etapa
                             </small>
-                        </a>
-
-                        <a
-                            class="category-item category-beauty"
-                            href="#"
-                        >
-                            <span class="category-icon">
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true"
-                                >
-                                    <path d="M12 21c-5-3-7-7-7-11 3 0 5 1 7 3 2-2 4-3 7-3 0 4-2 8-7 11Z"></path>
-                                    <path d="M12 13c-1-4 0-7 3-10 2 4 1 7-3 10Z"></path>
-                                </svg>
-                            </span>
-
-                            <strong data-i18n="categories.beautyTitle">
+</a>
+<a class="category-item category-beauty" href="buscar-v28.html?categoria=belleza">
+<span class="category-icon">
+<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10a3 3 0 0 0 3-3v-3a2 2 0 0 0-4 0v-4a2 2 0 0 0-4 0V8a2 2 0 0 0-4 0v7l-1-2a2 2 0 0 0-3 2l3 6Z"/><path d="M8 5V3m4 3V2m4 7V5"/></svg>
+</span>
+<strong data-i18n="categories.beautyTitle">
                                 Belleza
                             </strong>
-
-                            <small data-i18n="categories.beautyDescription">
+<small data-i18n="categories.beautyDescription">
                                 Cuídate mejor
                             </small>
-                        </a>
-
-                        <a
-                            class="category-item category-auto"
-                            href="#"
-                        >
-                            <span class="category-icon">
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true"
-                                >
-                                    <path d="m5 11 2-5h10l2 5"></path>
-
-                                    <rect
-                                        x="3"
-                                        y="10"
-                                        width="18"
-                                        height="8"
-                                        rx="2"
-                                    ></rect>
-
-                                    <circle cx="7" cy="18" r="2"></circle>
-                                    <circle cx="17" cy="18" r="2"></circle>
-                                    <path d="M6 13h12"></path>
-                                </svg>
-                            </span>
-
-                            <strong data-i18n="categories.autoTitle">
+</a>
+<a class="category-item category-auto" href="categorias.html" title="Categoría próximamente">
+<span class="category-icon">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="m5 11 2-5h10l2 5"></path>
+<rect height="8" rx="2" width="18" x="3" y="10"></rect>
+<circle cx="7" cy="18" r="2"></circle>
+<circle cx="17" cy="18" r="2"></circle>
+<path d="M6 13h12"></path>
+</svg>
+</span>
+<strong data-i18n="categories.autoTitle">
                                 Auto
                             </strong>
-
-                            <small data-i18n="categories.autoDescription">
+<small data-i18n="categories.autoDescription">
                                 Mejores decisiones
                             </small>
-                        </a>
-
-                        <a
-                            class="category-item category-pets"
-                            href="#"
-                        >
-                            <span class="category-icon">
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true"
-                                >
-                                    <circle cx="7" cy="7" r="2"></circle>
-                                    <circle cx="17" cy="7" r="2"></circle>
-                                    <circle cx="5" cy="12" r="2"></circle>
-                                    <circle cx="19" cy="12" r="2"></circle>
-                                    <path d="M12 11c-4 0-7 4-5 7 1.5 2 3.5 1 5 0 1.5 1 3.5 2 5 0 2-3-1-7-5-7Z"></path>
-                                </svg>
-                            </span>
-
-                            <strong data-i18n="categories.petsTitle">
+</a>
+<a class="category-item category-pets" href="categorias.html" title="Categoría próximamente">
+<span class="category-icon">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<circle cx="7" cy="7" r="2"></circle>
+<circle cx="17" cy="7" r="2"></circle>
+<circle cx="5" cy="12" r="2"></circle>
+<circle cx="19" cy="12" r="2"></circle>
+<path d="M12 11c-4 0-7 4-5 7 1.5 2 3.5 1 5 0 1.5 1 3.5 2 5 0 2-3-1-7-5-7Z"></path>
+</svg>
+</span>
+<strong data-i18n="categories.petsTitle">
                                 Mascotas
                             </strong>
-
-                            <small data-i18n="categories.petsDescription">
+<small data-i18n="categories.petsDescription">
                                 Bienestar y cuidado
                             </small>
-                        </a>
-
-                        <a
-                            class="category-item category-kitchen"
-                            href="#"
-                        >
-                            <span class="category-icon">
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true"
-                                >
-                                    <path d="M7 10a5 5 0 0 1 10 0"></path>
-                                    <path d="M5 10h14v9H5z"></path>
-                                    <path d="M8 19v2"></path>
-                                    <path d="M12 19v2"></path>
-                                    <path d="M16 19v2"></path>
-                                </svg>
-                            </span>
-
-                            <strong data-i18n="categories.kitchenTitle">
+</a>
+<a class="category-item category-kitchen" href="categorias.html" title="Categoría próximamente">
+<span class="category-icon">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M7 10a5 5 0 0 1 10 0"></path>
+<path d="M5 10h14v9H5z"></path>
+<path d="M8 19v2"></path>
+<path d="M12 19v2"></path>
+<path d="M16 19v2"></path>
+</svg>
+</span>
+<strong data-i18n="categories.kitchenTitle">
                                 Cocina
                             </strong>
-
-                            <small data-i18n="categories.kitchenDescription">
+<small data-i18n="categories.kitchenDescription">
                                 Utensilios y más
                             </small>
-                        </a>
-
-                        <a
-                            class="category-item category-office"
-                            href="#"
-                        >
-                            <span class="category-icon">
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true"
-                                >
-                                    <rect
-                                        x="7"
-                                        y="3"
-                                        width="10"
-                                        height="11"
-                                        rx="2"
-                                    ></rect>
-
-                                    <path d="M5 14h14v4H5z"></path>
-                                    <path d="M8 18v3"></path>
-                                    <path d="M16 18v3"></path>
-                                    <path d="M12 14v4"></path>
-                                </svg>
-                            </span>
-
-                            <strong data-i18n="categories.officeTitle">
+</a>
+<a class="category-item category-office" href="categorias.html" title="Categoría próximamente">
+<span class="category-icon">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<rect height="11" rx="2" width="10" x="7" y="3"></rect>
+<path d="M5 14h14v4H5z"></path>
+<path d="M8 18v3"></path>
+<path d="M16 18v3"></path>
+<path d="M12 14v4"></path>
+</svg>
+</span>
+<strong data-i18n="categories.officeTitle">
                                 Oficina
                             </strong>
-
-                            <small data-i18n="categories.officeDescription">
+<small data-i18n="categories.officeDescription">
                                 Productividad diaria
                             </small>
-                        </a>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-          <section
-    class="how-feler-section"
-    id="como-funciona"
->
-
-    <div class="how-feler-container">
-
-        <div class="how-feler-heading">
-
-            <p class="how-feler-eyebrow">
-                CÓMO FUNCIONA FELER
-            </p>
-
-            <h2>
-                Un proceso transparente para tomar mejores decisiones
-            </h2>
-
-            <p class="how-feler-description">
-                Investigamos, analizamos y comparamos para ayudarte a encontrar
-                la opción que realmente te conviene.
-            </p>
-
-        </div>
-
-
-        <div class="how-feler-steps">
-
-            <article class="how-feler-step">
-
-                <span class="how-feler-number">
-                    1
-                </span>
-
-                <div class="how-feler-visual">
-
-                    <img
-                        src="assets/images/step-search.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-
-                </div>
-
-                <h3>
-                    Buscamos la información
-                </h3>
-
-                <p>
-                    Reunimos opiniones reales, pruebas independientes
-                    y datos confiables.
-                </p>
-
-            </article>
-
-
-            <div
-                class="how-feler-arrow"
-                aria-hidden="true"
-            >
-                →
-            </div>
-
-
-            <article class="how-feler-step">
-
-                <span class="how-feler-number">
-                    2
-                </span>
-
-                <div class="how-feler-visual">
-
-                    <img
-                        src="assets/images/step-analyze.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-
-                </div>
-
-                <h3>
-                    Analizamos la evidencia
-                </h3>
-
-                <p>
-                    Evaluamos cada opción con nuestros criterios
-                    de calidad y rendimiento.
-                </p>
-
-            </article>
-
-
-            <div
-                class="how-feler-arrow"
-                aria-hidden="true"
-            >
-                →
-            </div>
-
-
-            <article class="how-feler-step">
-
-                <span class="how-feler-number">
-                    3
-                </span>
-
-                <div class="how-feler-visual">
-
-                    <img
-                        src="assets/images/step-best-choice.png"
-                        alt=""
-                        aria-hidden="true"
-                    >
-
-                </div>
-
-                <h3>
-                    Recomendamos la mejor opción
-                </h3>
-
-                <p>
-                    Te presentamos la opción que realmente te conviene,
-                    según tus necesidades.
-                </p>
-
-            </article>
-
-        </div>
-
-
-        <div class="how-feler-principles">
-
-            <article class="how-feler-principle">
-
-                <div class="how-feler-principle-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <circle cx="11" cy="11" r="6"></circle>
-                        <path d="m20 20-4.5-4.5"></path>
-                        <path d="m9 11 1.5 1.5L13.5 9"></path>
-                    </svg>
-
-                </div>
-
-                <div>
-                    <h3>
-                        Investigación rigurosa
-                    </h3>
-
-                    <p>
-                        Fuentes confiables, pruebas independientes
-                        y experiencias reales verificadas.
-                    </p>
-                </div>
-
-            </article>
-
-
-            <article class="how-feler-principle">
-
-                <div class="how-feler-principle-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <path d="M12 3v18"></path>
-                        <path d="M5 6h14"></path>
-                        <path d="m5 6-3 6h6L5 6Z"></path>
-                        <path d="m19 6-3 6h6l-3-6Z"></path>
-                    </svg>
-
-                </div>
-
-                <div>
-                    <h3>
-                        Independencia total
-                    </h3>
-
-                    <p>
-                        No aceptamos pagos de marcas para decidir
-                        qué producto recomendamos.
-                    </p>
-                </div>
-
-            </article>
-
-
-            <article class="how-feler-principle">
-
-                <div class="how-feler-principle-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <path d="M6 3h9l3 3v15H6Z"></path>
-                        <path d="M9 10h6"></path>
-                        <path d="M9 14h6"></path>
-                        <path d="m9 18 1.5 1.5L14 16"></path>
-                    </svg>
-
-                </div>
-
-                <div>
-                    <h3>
-                        Transparencia ante todo
-                    </h3>
-
-                    <p>
-                        Explicamos por qué recomendamos cada producto,
-                        con claridad y sin letras pequeñas.
-                    </p>
-                </div>
-
-            </article>
-
-
-            <article class="how-feler-principle">
-
-                <div class="how-feler-principle-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <path d="M20 7v5h-5"></path>
-                        <path d="M4 17v-5h5"></path>
-                        <path d="M7.5 7.5A7 7 0 0 1 19 10"></path>
-                        <path d="M16.5 16.5A7 7 0 0 1 5 14"></path>
-                    </svg>
-
-                </div>
-
-                <div>
-                    <h3>
-                        Actualización constante
-                    </h3>
-
-                    <p>
-                        Revisamos nuestras recomendaciones periódicamente
-                        para que siempre estén al día.
-                    </p>
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <div class="how-feler-promise">
-
-            <span
-                class="how-feler-promise-icon"
-                aria-hidden="true"
-            >
-                <svg viewBox="0 0 24 24">
-                    <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.3l8.8-8.9a5.5 5.5 0 0 0 0-7.8Z"></path>
-                </svg>
-            </span>
-
-            <p>
-                No recomendamos productos.
-                <strong>
-                    Recomendamos buenas decisiones.
-                </strong>
-            </p>
-
-        </div>
-
-    </div>
-
+</a>
+<a class="category-item category-party" href="categorias.html"><span class="category-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 20 11 5l8 8-15 7Z"></path><path d="m8 12 5 5M13 4l1-2M18 7l3-1M19 13l3 2M5 6 3 4"></path></svg></span><strong>Fiesta</strong><small>Celebra mejor</small></a></div>
+</div>
+</div>
 </section>
-    </main>
 
-    <script src="js/main.js"></script>
-
+</main>
+<script src="js/main.js"></script>
 </body>
-
 </html>
