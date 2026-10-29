@@ -1,0 +1,1 @@
+Feler V30: fotografías de las nueve categorías recortadas de la composición visual aprobada por la usuaria. Se actualizan las fotografías en categorias.html y buscar-v28.html, sin cambios a index.html ni al logo. Las fotos provienen de una captura compuesta y pueden tener resolución limitada al ampliarse. Versión para revisión local; no publicada.

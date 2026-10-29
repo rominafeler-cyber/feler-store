@@ -1,0 +1,12 @@
+FELER V31 — PARA REVISIÓN LOCAL, NO PUBLICADA
+
+Partimos de Feler V30 aprobada: íconos originales en Explora las categorías y fotos realistas en los cuestionarios.
+
+Cambios exclusivos:
+- js/destacados-semana.js: Ninja freidora de aire (ASIN B0DBN87GQJ) y Philips AWP1775CH filtro cromado de ducha.
+- js/v29-destacados.js: admite un enlace de búsqueda de Amazon.ca con tag de afiliada cuando todavía no se ha confirmado el ASIN del filtro Philips.
+
+Ninja: https://www.amazon.ca/dp/B0DBN87GQJ?tag=felerstore-20
+Philips: https://www.amazon.ca/s?k=Philips%20AWP1775CH%20shower%20filter%20chrome&tag=felerstore-20
+
+ATENCIÓN: el enlace de Philips es una BÚSQUEDA, no una ficha de producto identificada. Verificar modelo y ASIN antes de publicar. Los precios, porcentajes de descuento y atribución efectiva de comisión no están verificados. No se han añadido fotografías de productos.

@@ -1,0 +1,8 @@
+/* Feler V30: ajustes puntuales, sin modificar el diseño aprobado */
+.search-intro h1 {line-height:1.18!important;padding-bottom:.14em;overflow:visible!important}
+.search-intro {overflow:visible!important}
+.category-instruction {max-width:1240px;margin:12px auto 24px;padding:0 8px;color:#626e88;font-size:1.13rem;line-height:1.55;text-align:left}
+.feler-category-catalog #v28-catalog {display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important;align-items:stretch}
+.feler-category-catalog #v28-catalog > * {min-width:0;width:auto!important;max-width:none!important}
+@media(max-width:850px){.feler-category-catalog #v28-catalog{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:580px){.feler-category-catalog #v28-catalog{grid-template-columns:minmax(0,1fr)!important}.category-instruction{text-align:left;font-size:1rem;padding:0 4px}}

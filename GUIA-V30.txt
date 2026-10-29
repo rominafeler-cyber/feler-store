@@ -1,0 +1,5 @@
+Feler V30 — versión completa para revisión local.
+Destacados: solo selección editorial.
+Categorías: cuestionario general y catálogo por categoría.
+La web pública no se modifica al descargar este ZIP.
+Para seleccionar productos destacados, editar js/destacados-semana.js.

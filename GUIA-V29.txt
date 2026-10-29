@@ -1,0 +1,7 @@
+FELER V29 — REVISIÓN, NO PUBLICAR SIN APROBACIÓN
+
+1. Cambios: un único botón Sign in; sección Selección de Feler; privacidad y criterios editoriales; pie de página con divulgación; sustitución de Opiniones reales.
+2. Para cambiar destacados: abre js/destacados-semana.js y añade entradas reales en la lista. Cada una debe incluir nombre, asin de Amazon.ca, categoria (ninos/belleza/aspiradoras), motivo y activo:true.
+3. No se han añadido productos inventados ni precios/ofertas no comprobados. La selección aparece con un aviso hasta que agregues productos.
+4. Revisa la política de privacidad y los criterios editoriales antes de publicar; no constituyen asesoría legal.
+5. Comprueba navegación, favoritos, cuestionarios, enlaces, móvil y contenido antes de subir a GitHub.

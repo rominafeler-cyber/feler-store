@@ -229,7 +229,7 @@
 .question-layout .answer-card.selected,body:has(.question-layout) .answer-card.selected{background:#ddd4ff!important;border:2px solid #8061e9!important;box-shadow:0 0 0 2px #a999ed44,0 8px 20px #5245a61a!important;color:#242047!important}
 .question-layout .answer-card.selected .answer-icon{background:#cbbdff!important;color:#5340b8!important}
 .question-layout .answer-card.selected strong,.question-layout .answer-card.selected small{color:#252047!important}
-</style></head>
+</style><link rel="stylesheet" href="css/v29.css"/><link rel="stylesheet" href="css/v30-fixes.css"/></head>
 <body>
 <header class="site-header">
 <div class="container header-inner">
@@ -241,12 +241,12 @@
 </span>
 <span class="brand-name">FELER</span>
 </a>
-<nav aria-label="Navegación principal" class="main-navigation"><a href="como-funciona.html">Cómo funciona</a><a href="categorias.html">Categorías</a><a href="sobre-feler.html">Sobre Feler</a><a class="featured-nav" href="recomendados.html">Productos recomendados</a></nav>
+<nav aria-label="Navegación principal" class="main-navigation"><a href="como-funciona.html">Cómo funciona</a><a href="categorias.html">Categorías</a><a href="sobre-feler.html">Sobre Feler</a><a class="featured-nav" href="recomendados.html">Destacados</a></nav>
 <div class="header-actions"><a class="feler-heart" href="favoritos.html" aria-label="Mis favoritos" title="Mis favoritos">♡</a>
 
 
 
-<a class="feler-user-icon" href="registro.html" aria-label="Acceder a mi cuenta" title="Acceder a mi cuenta"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"/><path d="M4.5 21v-2a7.5 7.5 0 0 1 15 0v2"/></svg></a><a class="login-button" href="registro.html">Sign in</a></div>
+<a class="login-button feler-login-combined" href="registro.html" aria-label="Sign in — registro próximamente"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="3.5"/><path d="M4.5 21v-2a7.5 7.5 0 0 1 15 0v2"/></svg><span>Sign in</span></a></div>
 <button aria-expanded="false" aria-label="Abrir menú" class="mobile-menu-button" type="button">
 <span></span>
 <span></span>
@@ -295,11 +295,7 @@
                 realmente pueda cambiar nuestra recomendación.
             </p>
 </section>
-<nav aria-label="Elegir categoría" class="feler-categories">
-<a data-cat="ninos" href="buscar-v28.html?categoria=ninos"><svg class="feler-tab-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M6 20v-3a6 6 0 0 1 12 0v3M4.5 21h15M8 12l-2 3m10-3 2 3"/></svg><span>Niños · Ropa interior infantil</span></a>
-<a data-cat="belleza" href="buscar-v28.html?categoria=belleza"><svg class="feler-tab-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M7 21h10a3 3 0 0 0 3-3v-3a2 2 0 0 0-4 0v-4a2 2 0 0 0-4 0V8a2 2 0 0 0-4 0v7l-1-2a2 2 0 0 0-3 2l3 6Z"/><path d="M8 5V3m4 3V2m4 7V5"/></svg><span>Belleza · Uñas</span></a>
-<a data-cat="aspiradoras" href="buscar-v28.html?categoria=aspiradoras"><svg class="feler-tab-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5V21H3v-9.5ZM9 21v-7h6v7"/></svg><span>Hogar · Aspiradoras</span></a>
-</nav>
+<nav aria-label="Elegir categoría" class="feler-categories"><a data-cat="hogar" href="buscar-v28.html?categoria=hogar">Hogar</a><a data-cat="tecnologia" href="buscar-v28.html?categoria=tecnologia">Tecnología</a><a data-cat="ninos" href="buscar-v28.html?categoria=ninos">Bebés y niños</a><a data-cat="belleza" href="buscar-v28.html?categoria=belleza">Belleza</a><a data-cat="auto" href="buscar-v28.html?categoria=auto">Auto</a><a data-cat="mascotas" href="buscar-v28.html?categoria=mascotas">Mascotas</a><a data-cat="cocina" href="buscar-v28.html?categoria=cocina">Cocina</a><a data-cat="oficina" href="buscar-v28.html?categoria=oficina">Oficina</a><a data-cat="fiesta" href="buscar-v28.html?categoria=fiesta">Fiesta</a></nav>
 <section class="query-summary">
 <div>
 <span class="query-label">
@@ -310,9 +306,10 @@
                 </p>
 </div>
 <button class="edit-query" type="button">
-                Editar respuestas
+                Reiniciar cuestionario
             </button>
 </section>
+<p id="category-instruction" class="category-instruction" aria-live="polite"></p>
 <div class="question-layout">
 <aside aria-label="Cómo usamos tus respuestas" class="context-panel">
 <div class="context-visual">
@@ -409,19 +406,28 @@
 </section>
 </div>
 </main>
+<section class="feler-category-catalog v28-page" aria-labelledby="feler-category-catalog-title"><h2 id="feler-category-catalog-title">Productos de esta categoría</h2><p class="v28-quiet">Estos son los productos registrados en Feler. Su presencia no implica una recomendación personalizada. Comprueba siempre los detalles en Amazon.ca.</p><div id="v28-catalog" class="v28-grid"></div></section>
 <footer style="max-width:1050px;margin:22px auto;padding:16px 24px;color:#394460;font-size:13px;line-height:1.65;text-align:center">
 <p><strong>Divulgación de afiliación:</strong> Algunos enlaces a Amazon.ca son enlaces de afiliado. Feler puede recibir una comisión por compras que cumplan los requisitos, sin costo adicional por utilizar el enlace.</p>
 <p lang="en">As an Amazon Associate I earn from qualifying purchases.</p>
 </footer>
+
 <script src="js/productos-ca-v12.js"></script>
 <script src="js/productos-ninos-belleza-v3.js"></script>
 <script src="js/estados-ca-v5.js"></script>
 <script>
-const felerCategory = new URLSearchParams(location.search).get('categoria') || 'aspiradoras';
+const felerCategory = new URLSearchParams(location.search).get('categoria') || 'hogar';
+const felerProducto = new URLSearchParams(location.search).get('producto') || '';
+// V30 navigation: the first screen for a category is its family selector.
+function returnToCategoryFamilies(){
+  const category = felerCategory === 'aspiradoras' ? 'hogar' : felerCategory;
+  window.location.href = 'buscar-v28.html?categoria=' + encodeURIComponent(category);
+}
+
 document.querySelectorAll('.feler-categories a').forEach(a => {
   if(a.dataset.cat === felerCategory){a.classList.add('selected');a.setAttribute('aria-current','page')}
 });
-if(felerCategory === 'aspiradoras') {
+if(felerCategory === 'aspiradoras' && felerProducto === 'aspiradoras') {
 
     // V19: barra de progreso sincronizada con el estado real del cuestionario.
     const progressSteps = [...document.querySelectorAll('.progress-card .progress-step')];
@@ -682,7 +688,7 @@ if(felerCategory === 'aspiradoras') {
 
         nextButton.textContent = "Siguiente →";
         nextButton.disabled = !(key in answers);
-        backButton.disabled = editMode ? editIndex === 0 : history.length === 0;
+        backButton.disabled = false;
     }
 
     function showNextQuestion() {
@@ -700,7 +706,7 @@ if(felerCategory === 'aspiradoras') {
             currentQuestion = "ready";
             nextButton.textContent = "Analizar opciones →";
             nextButton.disabled = false;
-            backButton.disabled = history.length === 0;
+            backButton.disabled = false;
             return;
         }
         renderQuestion(pending[0], false);
@@ -944,9 +950,10 @@ if(felerCategory === 'aspiradoras') {
     backButton.addEventListener("click", () => {
         if (editMode) {
             if (editIndex > 0) {editIndex--; renderQuestion(editOrder[editIndex], true);}
+            else returnToCategoryFamilies();
             return;
         }
-        if (history.length === 0) return;
+        if (history.length === 0 && currentQuestion !== "results") { returnToCategoryFamilies(); return; }
         if (currentQuestion === "results") {
             nextButton.style.display = "";
             answerGrid.className = "answer-grid";
@@ -960,6 +967,8 @@ if(felerCategory === 'aspiradoras') {
     });
 
     document.querySelector('.edit-query').addEventListener('click', () => {
+        returnToCategoryFamilies();
+        return;
         editOrder = getQuestionOrder();
         editMode = true;
         editIndex = 0;
@@ -971,7 +980,7 @@ if(felerCategory === 'aspiradoras') {
     });
     showNextQuestion();
 
-} else {
+} else if ((felerCategory === "ninos" && felerProducto === "ropa-interior") || (felerCategory === "belleza" && felerProducto === "unas")) {
 const configs = {
  ninos: {
   query:'“Busco ropa interior infantil”',
@@ -1128,10 +1137,55 @@ function render(){
  }
 }
 next.addEventListener('click',()=>{if(position<cfg.questions.length && position in answers){position++;render()}});
-back.addEventListener('click',()=>{if(position>0){position--;render()}});
-document.querySelector('.edit-query').addEventListener('click',()=>{position=0;render();document.querySelector('.question-card').scrollIntoView({behavior:'smooth',block:'start'});});
+back.addEventListener('click',()=>{if(position>0){position--;render()}else{returnToCategoryFamilies()}});
+document.querySelector('.edit-query').addEventListener('click',returnToCategoryFamilies);
 render();
+} else {
+// V29: exploración general por categoría; no supone un catálogo verificado.
+const families = {
+ hogar:{label:'Hogar',items:['Aspiradoras','Organización y almacenamiento','Limpieza del hogar','Decoración','Ropa de cama','Iluminación','Baño','Otros artículos del hogar'],photo:'assets/images/feler-categoria-hogar-v30.webp',alt:'Sala de estar luminosa'},
+ aspiradoras:{label:'Hogar',items:['Aspiradoras','Organización y almacenamiento','Limpieza del hogar','Decoración','Ropa de cama','Iluminación'],photo:'assets/images/feler-categoria-hogar-v30.webp',alt:'Sala de estar luminosa'},
+ tecnologia:{label:'Tecnología',items:['Computadoras y portátiles','Tabletas','Auriculares','Accesorios para celulares','Monitores','Teclados y ratones','Cámaras','Dispositivos inteligentes','Otros accesorios tecnológicos'],photo:'assets/images/feler-categoria-tecnologia-v30.webp',alt:'Escritorio con equipos de trabajo'},
+ ninos:{label:'Bebés y niños',items:['Ropa interior infantil','Ropa para niños','Juguetes','Juegos educativos','Útiles escolares','Mochilas','Libros infantiles','Artículos para bebés','Artículos de aprendizaje del baño','Otros productos infantiles'],photo:'assets/images/feler-categoria-ninos-v30.webp',alt:'Habitación infantil con juguetes y libros'},
+ belleza:{label:'Belleza',items:['Productos para uñas','Cuidado facial','Cuidado del cabello','Maquillaje','Cuidado corporal','Herramientas de belleza','Accesorios de belleza','Otros productos de belleza'],photo:'assets/images/feler-categoria-belleza-v30.webp',alt:'Productos de manicura y belleza'},
+ auto:{label:'Auto',items:['Organizadores para auto','Accesorios de limpieza','Soportes para celular','Cargadores para auto','Accesorios interiores','Herramientas para auto','Accesorios de viaje','Otros accesorios de auto'],photo:'assets/images/feler-categoria-auto-v30.webp',alt:'Ilustración de comparación de opciones'},
+ mascotas:{label:'Mascotas',items:['Alimento y accesorios de alimentación','Juguetes para perros','Juguetes para gatos','Camas y mantas','Correas y arneses','Higiene y cuidado','Transportadoras','Accesorios para mascotas'],photo:'assets/images/feler-categoria-mascotas-v30.webp',alt:'Hogar con perro'},
+ cocina:{label:'Cocina',items:['Utensilios de cocina','Ollas y sartenes','Pequeños electrodomésticos','Cafeteras','Organizadores de cocina','Recipientes para alimentos','Accesorios de repostería','Otros artículos de cocina'],photo:'assets/images/feler-categoria-cocina-v30.webp',alt:'Ilustración de análisis de opciones'},
+ oficina:{label:'Oficina',items:['Sillas de escritorio','Escritorios','Organizadores','Papelería','Iluminación de escritorio','Accesorios ergonómicos','Accesorios para teletrabajo','Otros artículos de oficina'],photo:'assets/images/feler-categoria-oficina-v30.webp',alt:'Escritorio de trabajo'},
+ fiesta:{label:'Fiesta',items:['Decoración de cumpleaños','Globos','Vajilla para fiestas','Recuerdos para invitados','Disfraces','Decoración temática','Artículos para celebraciones','Otros artículos de fiesta'],photo:'assets/images/feler-categoria-fiesta-v30.webp',alt:'Ilustración decorativa'}
+};
+const cat = families[felerCategory] || families.hogar;
+const label=document.getElementById('user-query'),title=document.getElementById('question-title'),help=document.getElementById('question-help'),count=document.getElementById('question-count'),grid=document.getElementById('answer-grid'),next=document.querySelector('.next-button'),back=document.querySelector('.back-button'),summary=document.getElementById('answers-summary'),img=document.querySelector('.context-photo');
+if(img){img.src=cat.photo;img.alt=cat.alt;img.parentElement.style.display='block';img.style.display='block';img.style.objectFit=cat.photo.endsWith('.svg')?'contain':'cover';img.style.background='#f6f5ff';}
+document.querySelector('.search-intro h1').textContent='Encontremos lo que necesitas en '+cat.label;
+document.querySelector('.search-intro p').textContent='';document.getElementById('category-instruction').textContent='Primero dinos qué tipo de producto buscas. Después afinaremos tus preferencias.';
+const questions=[
+ ['Producto','¿Qué estás buscando?',cat.items],
+ ['Prioridad','¿Qué es lo más importante para ti?',['Calidad y durabilidad','Facilidad de uso','Relación calidad-precio','Diseño y estilo','Características específicas','Todavía no lo sé']],
+ ['Presupuesto','¿Qué presupuesto aproximado tienes?',['Menos de 25 CAD','25 a 50 CAD','50 a 100 CAD','100 a 250 CAD','Más de 250 CAD','Flexible / prefiero comparar']],
+ ['Preferencias','¿Tienes alguna preferencia adicional?',['Para uso diario','Para regalar','Para principiantes','Para uso frecuente o intensivo','Sin preferencia']]
+];
+let pos=0;const answers=[];
+function show(){
+ const steps=[...document.querySelectorAll('.progress-step')];steps.forEach((e,i)=>{e.classList.toggle('active',i===Math.min(pos,3));e.classList.toggle('completed',i<pos)});
+ label.textContent=answers[0]?'“'+answers[0]+'”':'“Explorando '+cat.label+'”';
+ summary.replaceChildren();summary.className='answers-summary';answers.forEach((a,i)=>{if(!a)return;const li=document.createElement('li'),b=document.createElement('b');b.textContent=questions[i][0];li.append(b,document.createTextNode(a));summary.append(li)});
+ grid.replaceChildren();back.disabled=false;next.style.display=pos===4?'none':'';
+ if(pos===4){
+  count.textContent='Exploración completada';title.textContent='Tus preferencias están listas';help.textContent='Feler todavía no dispone de un catálogo evaluado para todas estas familias de productos. Puedes explorar opciones en Amazon.ca, pero no las presentamos como recomendaciones verificadas.';
+  const note=document.createElement('p');note.className='feler-notice';note.textContent='Esta es una búsqueda externa, no una selección evaluada por Feler. Comprueba características, vendedor, precio y disponibilidad en Amazon.ca.';grid.append(note);
+  const a=document.createElement('a');a.className='next-button';a.style.cssText='display:inline-block;text-decoration:none;padding:14px 20px;margin:12px 0';a.target='_blank';a.rel='noopener noreferrer sponsored';a.href='https://www.amazon.ca/s?k='+encodeURIComponent(answers[0]+' '+(answers[1]==='Todavía no lo sé'?'':answers[1]))+'&tag=felerstore-20';a.textContent='Explorar '+answers[0]+' en Amazon.ca ↗';grid.append(a);
+  const small=document.createElement('p');small.textContent='Algunos enlaces son de afiliado. Feler puede recibir una comisión por compras que cumplan los requisitos.';grid.append(small);return;
+ }
+ const q=questions[pos];count.textContent='Pregunta '+(pos+1)+' de '+questions.length;title.textContent=q[1];help.textContent=pos===0?'Selecciona una familia de productos. Puedes cambiarla más adelante.':'Elige la opción que mejor refleje lo que buscas.';grid.className='answer-grid';
+ q[2].forEach((choice,i)=>{const b=document.createElement('button');b.type='button';b.className='answer-card'+(answers[pos]===choice?' selected':'');const icon=document.createElement('span');icon.className='answer-icon';icon.textContent=pos===0?'✦':pos===2?'$':'✓';const content=document.createElement('span');content.className='answer-content';const strong=document.createElement('strong');strong.textContent=choice;content.append(strong);b.append(icon,content);b.addEventListener('click',()=>{answers[pos]=choice;grid.querySelectorAll('.answer-card').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');next.disabled=false;});grid.append(b)});
+ next.disabled=!answers[pos];next.textContent=pos===3?'Ver opciones →':'Siguiente →';
+}
+next.addEventListener('click',()=>{if(next.disabled)return;if(pos===0){const selected=answers[0];if((felerCategory==='ninos'&&selected==='Ropa interior infantil')||(felerCategory==='belleza'&&selected==='Productos para uñas')||(['hogar','aspiradoras'].includes(felerCategory)&&selected==='Aspiradoras')){const c=felerCategory==='hogar'?'aspiradoras':felerCategory;const prod=c==='ninos'?'ropa-interior':c==='belleza'?'unas':'aspiradoras';location.href='buscar-v28.html?categoria='+c+'&producto='+prod;return;}}pos++;show()});
+back.addEventListener('click',()=>{if(pos>0){pos--;show()}else{window.location.href='categorias.html'}});
+document.querySelector('.edit-query').addEventListener('click',()=>{pos=0;answers.length=0;show();document.querySelector('.question-card').scrollIntoView({behavior:'smooth',block:'start'});});
+show();
 }
 </script>
-</body>
+<footer class="feler-legal-footer"><p>Algunos enlaces son de afiliado. Feler puede recibir una comisión por compras que cumplan los requisitos, sin costo adicional por utilizar el enlace.</p><p lang="en">As an Amazon Associate I earn from qualifying purchases.</p><nav aria-label="Información legal"><a href="privacidad.html">Privacidad</a><a href="criterios-editoriales.html">Cómo seleccionamos productos</a></nav></footer><script src="js/v28-favoritos.js"></script><script src="js/v28-catalogo.js"></script></body>
 </html>
