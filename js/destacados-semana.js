@@ -1,5 +1,5 @@
-/* Selección Feler vigente desde 2026-10-29. 27 enlaces recibidos + Ninja + Philips.
-   No afirmar precios, descuentos o calidad sin verificación. */
+/* Selección FELER: 29 productos originales + 6 nuevos (2026-11-13).
+   Enlaces por ASIN; no afirmar precios o descuentos sin verificación. */
 window.FELER_DESTACADOS_SEMANA = [
   {
     "nombre": "Ninja — Freidora de aire",
@@ -232,6 +232,53 @@ window.FELER_DESTACADOS_SEMANA = [
     "motivo": "Comprueba modelo, características, opiniones y precio en Amazon.ca",
     "activo": true,
     "vigenteDesde": "2026-10-29"
+  },
+  {
+    "nombre": "Cojín de bromas autoinflable — Whoopee Cushion",
+    "asin": "B074XCMJ7Z",
+    "categoria": "hogar",
+    "motivo": "Consulta las características y disponibilidad en Amazon.ca",
+    "activo": true,
+    "vigenteDesde": "2026-11-13"
+  },
+  {
+    "nombre": "Ailun — Protectores de pantalla para iPhone 17 (3 unidades)",
+    "asin": "B0FDQLSR6Q",
+    "categoria": "tecnologia",
+    "motivo": "Confirma la compatibilidad con tu modelo de iPhone en Amazon.ca",
+    "activo": true,
+    "vigenteDesde": "2026-11-13"
+  },
+  {
+    "nombre": "23andMe Health + Ancestry — Kit de prueba de ADN",
+    "asin": "B01CUVPFZ6",
+    "categoria": "belleza",
+    "motivo": "Consulta las condiciones del servicio, privacidad y disponibilidad en Amazon.ca",
+    "activo": true,
+    "vigenteDesde": "2026-11-13"
+  },
+  {
+    "nombre": "Ninja PC201C HyperHeat — Olla multifunción 9 en 1",
+    "asin": "B0GGDQ2ZF8",
+    "categoria": "cocina",
+    "motivo": "Consulta las funciones, modelo y disponibilidad en Amazon.ca",
+    "activo": true,
+    "vigenteDesde": "2026-11-13"
+  },
+  {
+    "nombre": "Roborock Qrevo S5V — Robot aspirador y fregador",
+    "asin": "B0DSP8J476",
+    "categoria": "hogar",
+    "motivo": "Consulta las especificaciones y disponibilidad en Amazon.ca",
+    "activo": true,
+    "vigenteDesde": "2026-11-13"
+  },
+  {
+    "nombre": "bblüv Pöti — Asiento infantil acolchado para inodoro",
+    "asin": "B09NLQ7ZVG",
+    "categoria": "ninos",
+    "motivo": "Comprueba la variante y disponibilidad en Amazon.ca",
+    "activo": true,
+    "vigenteDesde": "2026-11-13"
   }
 ];
-
