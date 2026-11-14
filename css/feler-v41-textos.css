@@ -1,0 +1,8 @@
+/* FELER V41 — solo Destacados; conserva la cuadrícula y las ilustraciones */
+#feler-weekly-products .feler-v37-name,
+#feler-weekly-products .feler-v37-name a {font-size:16px!important;line-height:1.42!important;font-weight:700!important;overflow-wrap:anywhere}
+#feler-weekly-products .feler-v37-note {font-size:13px!important;line-height:1.5!important}
+#feler-weekly-products .feler-v37-card {height:auto;min-height:0;position:relative}
+#feler-weekly-products .feler-v41-number {display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-width:25px;height:25px;padding:0 6px;margin:0 0 8px;border-radius:8px;background:#f0ebff;color:#4930a4;font:700 13px/1 Inter,sans-serif}
+#feler-weekly-products .feler-card-favorite {cursor:pointer}
+@media(max-width:600px){#feler-weekly-products .feler-v37-name,#feler-weekly-products .feler-v37-name a{font-size:16px!important}}
