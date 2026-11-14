@@ -5,7 +5,15 @@ document.addEventListener('DOMContentLoaded',()=>{
  if(!valid.length){const el=document.createElement('p');el.className='feler-weekly-empty';el.textContent='Estamos preparando nuestra próxima selección de productos. Mientras tanto, explora el catálogo por categoría.';host.append(el);return;}
  for(const p of valid){
   const card=document.createElement('article');card.className='v28-tile feler-product-card';
-  const visual=document.createElement('div');visual.className='catalog-visual';visual.setAttribute('role','img');drawProductIcon(p,visual);
+  const visual=document.createElement('div');
+visual.className='catalog-visual';
+visual.setAttribute('role','img');
+
+if (typeof drawProductIcon === 'function') {
+  drawProductIcon(p, visual);
+} else {
+  visual.textContent = 'Imagen del producto pendiente';
+}
   const label=document.createElement('p');label.className='feler-weekly-label';label.textContent=p.motivo||'Selección de Feler';
   const h=document.createElement('h3');const a=document.createElement('a');a.href=p.asin?'https://www.amazon.ca/dp/'+encodeURIComponent(p.asin.toUpperCase())+'?tag=felerstore-20':'https://www.amazon.ca/s?k='+encodeURIComponent(p.busquedaAmazon)+'&tag=felerstore-20';a.target='_blank';a.rel='sponsored noopener noreferrer';a.textContent=p.nombre;h.append(a);
   const note=document.createElement('p');note.className='v28-quiet';note.textContent='Enlace de afiliado. Consulta la disponibilidad, el precio y la variante en Amazon.ca.';
