@@ -1,0 +1,15 @@
+/* FELER V36 - diseño de destacados aislado de otras páginas */
+#feler-weekly-products.feler-v36-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:26px;align-items:stretch}
+#feler-weekly-products .feler-v36-card{min-width:0;margin:0;padding:7px 7px 13px;border:1px solid #e0defb;border-radius:17px;background:#fff;box-shadow:0 3px 9px #42339a10;display:flex;flex-direction:column;gap:0}
+#feler-weekly-products .feler-v36-visual{display:flex;align-items:center;justify-content:center;width:100%;height:132px;min-height:132px;margin:0 0 8px;border-radius:13px;background:linear-gradient(135deg,#f2e7ff,#f7eefe);border:0}
+#feler-weekly-products .feler-v36-card:nth-child(5n + 2) .feler-v36-visual{background:linear-gradient(135deg,#e9f4ff,#eafaff)}
+#feler-weekly-products .feler-v36-card:nth-child(5n + 4) .feler-v36-visual{background:linear-gradient(135deg,#fff0e9,#f9eaff)}
+#feler-weekly-products .feler-v36-card:nth-child(7n) .feler-v36-visual{background:linear-gradient(135deg,#e8faf6,#eef0ff)}
+#feler-weekly-products .feler-v36-visual svg{width:100px;height:100px;max-width:82%;max-height:83%;stroke:#5b2bd0;fill:none;stroke-width:2.35;stroke-linecap:round;stroke-linejoin:round}
+#feler-weekly-products .feler-v36-name{font-family:Inter,sans-serif;font-size:12px;line-height:1.24;font-weight:700;margin:0 3px 8px;overflow-wrap:anywhere}
+#feler-weekly-products .feler-v36-name a{color:#22267b;text-decoration:none}
+#feler-weekly-products .feler-v36-name a:hover{text-decoration:underline}
+#feler-weekly-products .feler-v36-note{font-family:Inter,sans-serif;font-size:10px;line-height:1.35;color:#4e5b79;margin:auto 3px 0}
+@media(max-width:950px){#feler-weekly-products.feler-v36-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){#feler-weekly-products.feler-v36-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}#feler-weekly-products .feler-v36-visual{height:115px;min-height:115px}#feler-weekly-products .feler-v36-name{font-size:11px}}
+@media(max-width:360px){#feler-weekly-products.feler-v36-grid{grid-template-columns:1fr}}
