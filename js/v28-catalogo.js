@@ -44,7 +44,53 @@ document.addEventListener('DOMContentLoaded',()=>{
       card.append(visual,h,t,a);if(fav)card.append(fav);host.append(card);count++;
     }
   }
-  if(!count && filter===null){host.textContent='No hay modelos documentados para mostrar.';}
+  // V47: unir el catálogo histórico con las novedades de Black Friday.
+  // Se mantiene la representación original y se añaden los productos nuevos.
+  const fresh=(window.FELER_CATALOGO_CENTRAL?.nuevos||[]).filter(p=>
+    filter===null || (p.categorias||[]).includes(filter) ||
+    (filter==='aspiradoras' && (p.categorias||[]).includes('hogar'))
+  ).sort((a,b)=>b.numero-a.numero);
+  const legacyAsins=new Set([...host.querySelectorAll('a[href]')].map(a=>
+    (a.href.match(/\/dp\/([A-Z0-9]{10})/i)||[])[1]
+  ).filter(Boolean));
+  const freshSection=document.createElement('section');
+  freshSection.className='feler-v47-new-products';
+  const freshGrid=document.createElement('div');
+  freshGrid.className='v28-grid feler-v37-grid feler-v43-products';
+  const illustrations={
+    ninos:'🧸',juguetes:'🧩',belleza:'✨',tecnologia:'💻',
+    hogar:'🏠',cocina:'🍳',oficina:'🗂️',auto:'🚗',mascotas:'🐾',fiesta:'🎉'
+  };
+  let added=0;
+  for(const item of fresh){
+    if(legacyAsins.has(item.asin))continue;
+    legacyAsins.add(item.asin);
+    const card=document.createElement('article');
+    card.className='v28-tile feler-product-card feler-v37-card feler-v43-card';
+    const num=document.createElement('span');num.className='feler-v41-number';num.textContent=String(item.numero);
+    const visual=document.createElement('div');visual.className='feler-v37-visual';
+    visual.setAttribute('role','img');visual.setAttribute('aria-label','Ilustración orientativa');
+    visual.textContent=illustrations[item.categorias[0]]||'📦';
+    visual.style.fontSize='3rem';
+    const title=document.createElement('h3');title.className='feler-v37-name';
+    const link=document.createElement('a');link.href=item.url;link.target='_blank';
+    link.rel='sponsored noopener noreferrer';link.textContent=item.nombre;title.append(link);
+    const note=document.createElement('p');note.className='feler-v37-note';
+    note.textContent='Enlace de afiliado. Comprueba precio, variante y disponibilidad en Amazon.ca.';
+    card.append(num,visual,title,note);
+    if(window.FelerFavoritos?.button){
+      try{card.append(window.FelerFavoritos.button({categoria:item.categorias[0],id:item.asin,nombre:item.nombre,etiqueta:'Catálogo FELER'}));}catch(e){console.warn(e)}
+    }
+    freshGrid.append(card);added++;
+  }
+  if(added){
+    const heading=document.createElement('h3');heading.className='feler-v43-section-title';
+    heading.textContent='Nuevos productos FELER ('+added+')';
+    freshSection.append(heading,freshGrid);
+    host.parentNode.insertBefore(freshSection,host);
+  }
+  if(!count && !added && filter===null){host.textContent='No hay modelos documentados para mostrar.';}
+
   const legacyHeading=document.querySelector('.feler-v44-legacy-title');
   if(legacyHeading)legacyHeading.hidden=count===0;
 });
