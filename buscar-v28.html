@@ -229,7 +229,7 @@
 .question-layout .answer-card.selected,body:has(.question-layout) .answer-card.selected{background:#ddd4ff!important;border:2px solid #8061e9!important;box-shadow:0 0 0 2px #a999ed44,0 8px 20px #5245a61a!important;color:#242047!important}
 .question-layout .answer-card.selected .answer-icon{background:#cbbdff!important;color:#5340b8!important}
 .question-layout .answer-card.selected strong,.question-layout .answer-card.selected small{color:#252047!important}
-</style><link rel="stylesheet" href="css/v29.css"/><link rel="stylesheet" href="css/v30-fixes.css"/></head>
+</style><link rel="stylesheet" href="css/v29.css"/><link rel="stylesheet" href="css/v30-fixes.css"/><link rel="stylesheet" href="css/v37-destacados.css"><link rel="stylesheet" href="css/feler-v41-textos.css"><link rel="stylesheet" href="css/feler-black-friday-v43.css"></head>
 <body>
 <header class="site-header">
 <div class="container header-inner">
@@ -295,7 +295,7 @@
                 realmente pueda cambiar nuestra recomendación.
             </p>
 </section>
-<nav aria-label="Elegir categoría" class="feler-categories"><a data-cat="hogar" href="buscar-v28.html?categoria=hogar">Hogar</a><a data-cat="tecnologia" href="buscar-v28.html?categoria=tecnologia">Tecnología</a><a data-cat="ninos" href="buscar-v28.html?categoria=ninos">Bebés y niños</a><a data-cat="belleza" href="buscar-v28.html?categoria=belleza">Belleza</a><a data-cat="auto" href="buscar-v28.html?categoria=auto">Auto</a><a data-cat="mascotas" href="buscar-v28.html?categoria=mascotas">Mascotas</a><a data-cat="cocina" href="buscar-v28.html?categoria=cocina">Cocina</a><a data-cat="oficina" href="buscar-v28.html?categoria=oficina">Oficina</a><a data-cat="fiesta" href="buscar-v28.html?categoria=fiesta">Fiesta</a></nav>
+<nav aria-label="Elegir categoría" class="feler-categories"><a data-cat="hogar" href="buscar-v28.html?categoria=hogar">Hogar</a><a data-cat="tecnologia" href="buscar-v28.html?categoria=tecnologia">Tecnología</a><a data-cat="ninos" href="buscar-v28.html?categoria=ninos">Bebés y niños</a><a data-cat="belleza" href="buscar-v28.html?categoria=belleza">Belleza y salud</a><a data-cat="auto" href="buscar-v28.html?categoria=auto">Auto</a><a data-cat="mascotas" href="buscar-v28.html?categoria=mascotas">Mascotas</a><a data-cat="cocina" href="buscar-v28.html?categoria=cocina">Cocina</a><a data-cat="oficina" href="buscar-v28.html?categoria=oficina">Oficina</a><a data-cat="fiesta" href="buscar-v28.html?categoria=fiesta">Fiesta</a></nav>
 <section class="query-summary">
 <div>
 <span class="query-label">
@@ -406,7 +406,7 @@
 </section>
 </div>
 </main>
-<section class="feler-category-catalog v28-page" aria-labelledby="feler-category-catalog-title"><h2 id="feler-category-catalog-title">Productos de esta categoría</h2><p class="v28-quiet">Estos son los productos registrados en Feler. Su presencia no implica una recomendación personalizada. Comprueba siempre los detalles en Amazon.ca.</p><div id="v28-catalog" class="v28-grid"></div></section>
+<section class="feler-category-catalog v28-page" aria-labelledby="feler-category-catalog-title"><h2 id="feler-category-catalog-title">Productos de esta categoría</h2><p class="v28-quiet">Estos son los productos registrados en Feler. Su presencia no implica una recomendación personalizada. Comprueba siempre los detalles en Amazon.ca.</p><h3 class="feler-v44-legacy-title">Productos del catálogo original FELER</h3><div id="v28-catalog" class="v28-grid"></div></section>
 <footer style="max-width:1050px;margin:22px auto;padding:16px 24px;color:#394460;font-size:13px;line-height:1.65;text-align:center">
 <p><strong>Divulgación de afiliación:</strong> Algunos enlaces a Amazon.ca son enlaces de afiliado. Feler puede recibir una comisión por compras que cumplan los requisitos, sin costo adicional por utilizar el enlace.</p>
 <p lang="en">As an Amazon Associate I earn from qualifying purchases.</p>
@@ -1147,7 +1147,7 @@ const families = {
  aspiradoras:{label:'Hogar',items:['Aspiradoras','Organización y almacenamiento','Limpieza del hogar','Decoración','Ropa de cama','Iluminación'],photo:'assets/images/feler-categoria-hogar-v30.webp',alt:'Sala de estar luminosa'},
  tecnologia:{label:'Tecnología',items:['Computadoras y portátiles','Tabletas','Auriculares','Accesorios para celulares','Monitores','Teclados y ratones','Cámaras','Dispositivos inteligentes','Otros accesorios tecnológicos'],photo:'assets/images/feler-categoria-tecnologia-v30.webp',alt:'Escritorio con equipos de trabajo'},
  ninos:{label:'Bebés y niños',items:['Ropa interior infantil','Ropa para niños','Juguetes','Juegos educativos','Útiles escolares','Mochilas','Libros infantiles','Artículos para bebés','Artículos de aprendizaje del baño','Otros productos infantiles'],photo:'assets/images/feler-categoria-ninos-v30.webp',alt:'Habitación infantil con juguetes y libros'},
- belleza:{label:'Belleza',items:['Productos para uñas','Cuidado facial','Cuidado del cabello','Maquillaje','Cuidado corporal','Herramientas de belleza','Accesorios de belleza','Otros productos de belleza'],photo:'assets/images/feler-categoria-belleza-v30.webp',alt:'Productos de manicura y belleza'},
+ belleza:{label:'Belleza y salud',items:['Productos para uñas','Cuidado facial','Cuidado del cabello','Maquillaje','Cuidado corporal','Herramientas de belleza','Accesorios de belleza','Otros productos de belleza'],photo:'assets/images/feler-categoria-belleza-v30.webp',alt:'Productos de manicura y belleza'},
  auto:{label:'Auto',items:['Organizadores para auto','Accesorios de limpieza','Soportes para celular','Cargadores para auto','Accesorios interiores','Herramientas para auto','Accesorios de viaje','Otros accesorios de auto'],photo:'assets/images/feler-categoria-auto-v30.webp',alt:'Ilustración de comparación de opciones'},
  mascotas:{label:'Mascotas',items:['Alimento y accesorios de alimentación','Juguetes para perros','Juguetes para gatos','Camas y mantas','Correas y arneses','Higiene y cuidado','Transportadoras','Accesorios para mascotas'],photo:'assets/images/feler-categoria-mascotas-v30.webp',alt:'Hogar con perro'},
  cocina:{label:'Cocina',items:['Utensilios de cocina','Ollas y sartenes','Pequeños electrodomésticos','Cafeteras','Organizadores de cocina','Recipientes para alimentos','Accesorios de repostería','Otros artículos de cocina'],photo:'assets/images/feler-categoria-cocina-v30.webp',alt:'Ilustración de análisis de opciones'},
@@ -1187,5 +1187,5 @@ document.querySelector('.edit-query').addEventListener('click',()=>{pos=0;answer
 show();
 }
 </script>
-<footer class="feler-legal-footer"><p>Algunos enlaces son de afiliado. Feler puede recibir una comisión por compras que cumplan los requisitos, sin costo adicional por utilizar el enlace.</p><p lang="en">As an Amazon Associate I earn from qualifying purchases.</p><nav aria-label="Información legal"><a href="privacidad.html">Privacidad</a><a href="criterios-editoriales.html">Cómo seleccionamos productos</a></nav></footer><script src="js/v28-favoritos.js"></script><script src="js/v28-catalogo.js"></script></body>
+<footer class="feler-legal-footer"><p>Algunos enlaces son de afiliado. Feler puede recibir una comisión por compras que cumplan los requisitos, sin costo adicional por utilizar el enlace.</p><p lang="en">As an Amazon Associate I earn from qualifying purchases.</p><nav aria-label="Información legal"><a href="privacidad.html">Privacidad</a><a href="criterios-editoriales.html">Cómo seleccionamos productos</a></nav></footer><script src="js/v28-favoritos.js"></script><script src="js/v28-catalogo.js"></script><script src="js/feler-black-friday-catalogo.js"></script><script src="js/feler-black-friday-render.js"></script></body>
 </html>
