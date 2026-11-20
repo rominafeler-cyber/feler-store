@@ -31,3 +31,13 @@
 .feler-v43-products{grid-template-columns:repeat(auto-fill,minmax(min(100%,235px),1fr))}
 .feler-v43-products .feler-v43-card{max-width:390px;width:100%;box-sizing:border-box}
 @media(max-width:620px){.feler-v43-products{grid-template-columns:repeat(auto-fill,minmax(min(100%,165px),1fr))}}
+
+/* V48: catálogo integrado y estilo de ilustración FELER. */
+#v28-catalog.feler-v43-products{margin-top:18px;align-items:stretch}
+#v28-catalog.feler-v43-products .feler-v37-visual{position:relative;overflow:hidden;font-size:0;color:transparent}
+#v28-catalog.feler-v43-products .feler-v37-visual::before,#v28-catalog.feler-v43-products .feler-v37-visual::after{content:none!important;display:none!important}
+#v28-catalog.feler-v43-products .feler-v37-visual svg{width:116px;height:116px;stroke:#5925cb;stroke-width:2.35}
+#v28-catalog.feler-v43-products .feler-v43-card:nth-child(5n + 2) .feler-v37-visual{background:linear-gradient(135deg,#e9f4ff,#eafaff)}
+#v28-catalog.feler-v43-products .feler-v43-card:nth-child(5n + 4) .feler-v37-visual{background:linear-gradient(135deg,#fff0e9,#f9eaff)}
+#v28-catalog.feler-v43-products .feler-v43-card:nth-child(7n) .feler-v37-visual{background:linear-gradient(135deg,#e8faf6,#eef0ff)}
+#v28-catalog.feler-v43-products>.v28-tile:not(.feler-v43-card){max-width:390px;min-width:0;width:100%;box-sizing:border-box}
