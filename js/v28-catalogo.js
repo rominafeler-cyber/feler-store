@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded',()=>{
   const data=window.FELER_CATALOGO_NUEVO||{};
   const labels={ninos:'Ropa interior infantil',belleza:'Belleza · Uñas',aspiradoras:'Hogar · Aspiradoras'};
   const filter=new URLSearchParams(location.search).get('categoria');
-  const selected=Object.prototype.hasOwnProperty.call(labels,filter)?filter:null;
+  const selected=filter==='hogar'?'aspiradoras':(Object.prototype.hasOwnProperty.call(labels,filter)?filter:null);
   const status=document.getElementById('v28-filter-status');
   const all=document.getElementById('v28-show-all');
   if(selected){
-    status.textContent='Mostrando únicamente el catálogo de '+labels[selected]+'.';
-    all.style.display='inline';
+    if(status)status.textContent='Mostrando productos originales de '+labels[selected]+'.';
+    if(all)all.style.display='inline';
   }
-  const keys=selected?[selected]:['ninos','belleza','aspiradoras'];
+  const keys=selected?[selected]:(filter===null?['ninos','belleza','aspiradoras']:[]);
   let count=0;
   for(const key of keys){
     const seen=new Set();
@@ -44,5 +44,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       card.append(visual,h,t,a);if(fav)card.append(fav);host.append(card);count++;
     }
   }
-  if(!count){host.textContent=selected?'Todavía no hay modelos documentados disponibles en esta categoría.':'No hay modelos documentados para mostrar.';}
+  if(!count && filter===null){host.textContent='No hay modelos documentados para mostrar.';}
+  const legacyHeading=document.querySelector('.feler-v44-legacy-title');
+  if(legacyHeading)legacyHeading.hidden=count===0;
 });
